@@ -1,0 +1,28 @@
+﻿@import "../../modules/_base.scss";
+/*Header User Info Block*/
+.b-userinfo{
+    @extend .b-search;
+    top:-312px;
+    height:312px;
+    
+    @include media($tablet){
+        top:-340px;
+        height:340px;
+    }
+
+    @include media($desktop){
+        top:-370px;
+        height:370px;
+    }
+}
+.b-userinfo__inner{
+    @extend .b-search__inner;
+}
+.b-userinfo__title{
+    @extend .b-search__title;
+}
+.b-userinfo__btn{
+    @extend .g-btn;
+    display:block;
+    @include px2rem(letter-spacing, -.2px);
+}

@@ -1,0 +1,38 @@
+@import "../modules/base";
+@import "header/_logo.scss";
+@import "header/_controls.scss";
+@import "header/_search-form.scss";
+@import "header/_user-info.scss";
+
+/*Site Header*/
+.b-header{
+    width:100%;
+    @include px2rem(padding, 11px 0);
+    background:#fff;
+    background:rgba(#fff, .8);
+    box-sizing:border-box;
+
+    @include media($desktop){
+        position:fixed;
+        top:0; left:0;
+        z-index:1000;
+        @include px2rem(height, 108px);
+    }
+}
+
+.b-header__inner{
+    position:relative;
+    z-index:1000;
+}
+
+.b-page{
+    @include media($desktop){
+        @include px2rem(padding-top, 108px);
+    }
+}
+
+.b-page--has-slider{
+    @include media($desktop){
+        padding:0;
+    }
+}

@@ -1,0 +1,71 @@
+﻿@import "base";
+/* Buttons */
+.g-btn{
+    display: inline-block;
+    @include px2rem(height, 54px);
+    @include px2rem(padding, 0 10px);
+    color:$primary;
+    text-align: center;
+    @include font-size(16px);
+    @include px2rem(line-height, 52px);
+    font-family:$font-serif;
+    letter-spacing:1px;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: #fff;
+    border-radius:$border-radius;
+    border: 1px solid $primary;
+    cursor: pointer;
+    box-sizing: border-box;
+
+
+    @include transform(translateZ(0));
+    @include backface-visibility(hidden);
+    @include transition-property(color, border-color);
+    @include transition-duration(.3s);
+    position:relative;
+
+
+    &:before{
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $primary-alt;
+        @include transform(scale(0));
+        @include transition-property(transform);
+        @include transition-duration(.3s);
+        @include transition-timing-function(ease-out);
+    }
+
+
+
+    &:hover,
+    &:focus,
+    &:active{
+        color:#fff;
+        border-color:$primary-alt;
+        outline:0;
+
+        &:before{
+            @include transform(scale(1));
+        }
+    }
+
+    @include media($desktop){
+        @include px2rem(padding, 0 40px);
+    }
+}
+
+.no-csstransforms{
+    .g-btn{
+        &:hover,
+        &:active,
+        &:focus{
+            background:$primary-alt;
+        }
+    }
+}

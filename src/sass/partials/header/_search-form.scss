@@ -1,0 +1,81 @@
+﻿@import "../../modules/_base.scss";
+/*Search Form*/
+.b-search{
+    position:absolute;
+    left:0; top:-236px;
+    height:236px;
+    width:100%;
+    box-sizing:border-box;
+    @include px2rem(padding, 58px 0 18px);
+    background:#fff;
+    z-index:800;
+    border-bottom:1px solid $primary;
+    overflow:hidden;
+    box-sizing:border-box;
+    opacity:0;
+    @include transition-property(transform, opacity);
+    @include transition-timing-function(ease);
+    @include transition-duration(.5s);
+    
+
+    @include media($tablet){
+        @include px2rem(padding-top, 94px);
+        height:279px;
+        top:-279px;
+    }
+
+    @include media($desktop){
+        @include px2rem(padding-top, 108px);
+        top:-309px;
+        height:309px;
+        
+    }
+
+    &.active{
+        @include transform(translateY(100%));
+        opacity:1;
+    }
+}
+
+
+.no-csstransforms{
+    .b-search.active{
+        top:0;
+    }
+}
+
+
+.b-search__inner{
+    width:100%;
+    @include px2rem(max-width, 610px);
+    margin:0 auto;
+}
+.b-search__title{
+    display:block;
+    @include px2rem(margin-bottom, $project-line-height);
+    @include font-size(18px);
+    color:$primary;
+    font-family:$font-serif-bold;
+
+    @include media($tablet){
+        @include font-size(24px);
+    }
+
+    @include media($desktop){
+        @include font-size(36px);
+    }
+}
+.b-search__input{
+    @extend .g-input;
+    @include px2rem(height, 54px);
+    @include font-size(24px);
+}
+input.b-search__input{
+    box-sizing:border-box;
+}
+.b-search__btn{
+    @extend .g-btn;
+    margin:0;
+    width:100%;
+    border-color:$border-color;
+}

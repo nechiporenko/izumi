@@ -1,0 +1,18 @@
+
+.icon-cancel:before { content: '\e800'; } /* '' */
+.icon-ok:before { content: '\e801'; } /* '' */
+.icon-copyright:before { content: '\e802'; } /* '' */
+.icon-instagramm:before { content: '\e803'; } /* '' */
+.icon-facebook:before { content: '\e804'; } /* '' */
+.icon-youtube:before { content: '\e805'; } /* '' */
+.icon-right-open-big:before { content: '\e806'; } /* '' */
+.icon-left-open-big:before { content: '\e807'; } /* '' */
+.icon-up-open-big:before { content: '\e808'; } /* '' */
+.icon-down-open-big:before { content: '\e809'; } /* '' */
+.icon-menu:before { content: '\e80a'; } /* '' */
+.icon-search:before { content: '\e80b'; } /* '' */
+.icon-user:before { content: '\e80c'; } /* '' */
+.icon-logout:before { content: '\e80d'; } /* '' */
+.icon-basket:before { content: '\e80e'; } /* '' */
+.icon-plus:before { content: '\e80f'; } /* '' */
+.icon-minus:before { content: '\e810'; } /* '' */

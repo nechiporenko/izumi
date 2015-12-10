@@ -1,0 +1,29 @@
+﻿@import "../../modules/_base.scss";
+
+/*Site Logo*/
+.logo{
+    display:block;
+    @include px2rem(width, 31px);
+    @include px2rem(height, 36px);
+    float:left;
+    @include hide-text;
+    background-image:url(../img/logo.png);
+    background-position:left center;
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+
+    @include media($tablet){
+        float:none;
+        position:absolute;
+        top:0;
+        left:50%;
+        @include px2rem(margin-left, -15px);
+    }
+
+    @include media($desktop){
+        @include px2rem(width, 74px);
+        @include px2rem(height, 86px);
+        @include px2rem(margin-left, -37px);
+    }
+}
+

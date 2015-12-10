@@ -1,0 +1,56 @@
+﻿@import "../../modules/_base.scss";
+/*Header Controls*/
+.b-header__controls{
+    float:right;
+    font-size:0;
+    position:relative;
+    z-index:1000;//значение хидера - нужно перекрыть форму поиска
+}
+
+.b-header__btn{
+    display:inline-block;
+    @include px2rem(height, 36px);
+    @include px2rem(width, 20px);
+    @include px2rem(line-height, 36px);
+    padding:0;
+    @include px2rem(margin, 0 0 0 10px);
+    text-align:center;
+    text-decoration:none;
+    white-space:nowrap;
+    border:none;
+    background-color:transparent;
+    color:$primary;
+    @include font-size(20px);
+    outline:0;
+
+    &:hover,
+    &:active,
+    &.active{
+        color:$primary-alt;
+    }
+
+    &:first-child{
+        margin-left:0;
+    }
+    [class^="icon-"]:before, [class*=" icon-"]:before{
+        margin:0;
+    }
+}
+
+.m-menu-toggle{
+    @include px2rem(margin-left, 30px);
+
+    [class^="icon-"]:before, [class*=" icon-"]:before{
+        @include transition(transform .3s ease);
+    }
+
+    &.active{
+        [class^="icon-"]:before, [class*=" icon-"]:before{
+            @include transform(rotate(-90deg));
+        }
+    }
+
+    @include media($tablet){
+        display:none;
+    }
+}
