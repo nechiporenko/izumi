@@ -1,0 +1,137 @@
+﻿@import "../../modules/_base.scss";
+/*Product Block*/
+.product{
+    margin-bottom:24px;
+}
+.product__link{
+    display:block;
+    margin-bottom:10px;
+    border:1px solid $border-color;
+    text-decoration:none;
+    @include transition-property(border-color, opacity);
+    @include transition-duration(.3s);
+    @include transition-timing-function(ease);
+
+    &:hover,
+    &:active{
+        border-color:$primary;
+        opacity:.85;
+    }
+}
+
+.product__thumb{
+    padding:0;
+    margin:0;
+    position:relative;
+
+    &:after{
+        content:'';
+        display:block;
+        padding-top:100%;
+    }
+}
+.product__img{
+    @extend .g-img-centered;
+}
+.product__row{
+    @extend .g-clearfix;
+}
+
+.product__col{
+    float:left;
+    width:100%;
+    min-height:1px;
+    box-sizing:border-box;
+}
+.product__col--price{
+    text-align:center;
+
+    @include media($mobile){
+        width:61%;
+        padding-right:15px;
+        text-align:left;
+    }
+}
+.product__col--btn{
+    @include media($mobile){
+        width:39%;
+    }
+}
+.product__id{
+    float:left;
+    @include px2rem(height, 18px);
+    @include px2rem(line-height, 20px);
+    padding:0 16px;
+    margin-right:10px;
+    border-radius:9px;
+    white-space:nowrap;
+    color:$primary;
+    background:#ede9e7;
+    @include font-size(14px);
+}
+.product__title{
+    font-family:$font-sans-bold;
+    text-decoration:none;
+    text-transform:uppercase;
+    @include font-size(14px);
+    line-height:1.1;
+}
+
+/*Product Price*/
+.price{
+    display:inline-block;
+    line-height:1;
+    margin:18px 0;
+}
+
+.price__val{
+    display:inline-block;
+    @include font-size(24px);
+    font-family:$font-sans-bold;
+    position:relative;
+}
+.price__curr{
+    @include font-size(14px);
+}
+
+.price--old{
+    .price__val{
+        &:after{
+            content:'';
+            display:block;
+            height:1px;
+            width:120%;
+            position:absolute;
+            left:-10%; top:50%;
+            background:$text-color;
+            @include transform(rotate(-18deg));
+        }
+    }
+    @include media($mobile){
+        float:left;
+    }
+}
+.price--new{
+    color:$primary-alt;
+    @include media($mobile){
+        float:right;
+    }
+}
+
+/*Product Sale Button*/
+.product__btn{
+    @extend .g-btn;
+    width:100%;
+    @include px2rem(height, 32px);
+    @include px2rem(line-height, 30px);
+    border-radius:16px;
+    margin:10px 0;
+
+    &:before{
+        border-radius:16px;
+    }
+
+    @include media($desktop){
+        @include px2rem(padding, 0 10px);
+    }
+}

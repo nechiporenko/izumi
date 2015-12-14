@@ -1,0 +1,54 @@
+﻿@import "../../modules/_base.scss";
+/*Promo Slider*/
+.promo{
+    .bx-wrapper{
+        .bx-controls-direction a{
+            display:block;
+            width:40px;
+            height:60px;
+            top:120px;
+            margin-top:0;
+            border:1px solid $border-color;
+            border-radius:2px;
+            background-color:#fff;
+            background-size:40% 50%;
+            background-position:center center;
+            opacity:1;
+
+            &:hover,
+            &:active{
+                border-color:$primary;
+            }
+        }
+        .bx-prev {
+		    left: 0;
+
+            @include media($desktop){
+                left:0;
+            }
+            @include media($large){
+                left:-20px;
+            }
+	    }
+	    .bx-next {
+		    right: 0;
+
+            @include media($desktop){
+                right:0;
+            }
+            @include media($large){
+                right:-20px;
+            }
+	    }
+    }
+}
+.promo__list{
+    @extend .g-clearlist;
+    @extend .g-clearfix;
+}
+.promo__item{
+    float:left;
+    width:100%;
+    max-width:300px;
+    margin-right:20px;
+}

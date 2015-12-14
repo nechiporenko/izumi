@@ -200,7 +200,55 @@ jQuery(document).ready(function ($) {
             autoHover: true
         });      
     }
+    if ($('.js-mainslider').length) { initMainSlider(); }
 
-    if ($('.js-mainslider').length) { initMainSlider();}
+    //
+    // Слайдер акционных предложений
+    //---------------------------------------------------------------------------------------
+    function initPromoSlider() {
+        var $slider = $('.js-promo-slider'),
+            getSliderSettings = function () {//будем показывать разное кол-во слайдов на разных разрешениях
+                var setting,
+                    settings1 = {
+                        maxSlides: 1,
+                    },
+                    settings2 = {
+                        maxSlides: 2,
+                    },
+                    settings3 = {
+                        maxSlides: 3,
+                    },
+                    common = {
+                        minSlides: 1,
+                        moveSlides: 1,
+                        slideWidth: 300,
+                        slideMargin: 20,
+                        pager: false,
+                        infiniteLoop: false,
+                        hideControlOnEnd: true
+                    },
+                    winW = $window.width();
+                if (winW < 700) {
+                    setting = $.extend(settings1, common);
+                }
+                if(winW>=700 && winW<990){
+                    setting = $.extend(settings2, common);
+                }
+                if (winW >= 990) {
+                    setting = $.extend(settings3, common);
+                }
+                return setting;
+            }
+        $slider = $slider.bxSlider(getSliderSettings()); //запускаем слайдер
+
+        $window.on('resize', function () {
+            setTimeout(recalcSliderSettings, 500);
+        });
+
+        function recalcSliderSettings() {
+            $slider.reloadSlider($.extend(getSliderSettings(), { startSlide: $slider.getCurrentSlide() }));
+        }
+    }
+    if ($('.js-promo-slider').length) { initPromoSlider();}
     
 });

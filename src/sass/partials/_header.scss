@@ -8,22 +8,27 @@
 .b-header{
     width:100%;
     @include px2rem(padding, 11px 0);
-    background:#fff;
-    background:rgba(#fff, .8);
+    background-color:#fff;
+    background-color:rgba(#fff, .8);
     box-sizing:border-box;
     position:relative;
     z-index:1000;
+    @include transition(background-color .3s ease);
 
     @include media($desktop){
         position:fixed;
         top:0; left:0;
         @include px2rem(height, 108px);
     }
+
+    &:hover{
+        background-color:#fff;
+    }
 }
 
 .b-header__inner{
-    /*position:relative;
-    z-index:1000;*/
+    position:relative;
+    z-index:1000;
 }
 
 .b-page{

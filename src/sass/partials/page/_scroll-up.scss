@@ -20,7 +20,7 @@
     bottom:5px;
     opacity:.5;
     @include transition(.3s opacity);
-    z-index:1000;
+    z-index:980;//под оверлеем
     cursor:pointer;
     display:none; //покажем скриптом
 

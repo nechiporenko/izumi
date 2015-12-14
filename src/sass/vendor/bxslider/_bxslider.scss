@@ -125,7 +125,7 @@ $loader:   '../img/loader.gif';
         }
 
 		&.disabled {
-			display: none;
+			opacity:.1;
 		}
 	}
 }
@@ -137,4 +137,7 @@ $loader:   '../img/loader.gif';
     .bx-next{
         background-image:url(../img/arrow-right.png);
     }
+    &.disabled {
+		display:none;
+	}
 }
