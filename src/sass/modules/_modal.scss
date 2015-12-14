@@ -12,4 +12,44 @@
     filter: alpha(opacity=70);
     z-index:990; //под хидером
     display:none;
+
+    &.full{
+        z-index:3000;//поверх всего
+    }
 }
+
+.modal{
+    position:absolute;
+    display:none;
+    box-sizing:border-box;
+    width:100%;
+    background:#000;
+    background:rgba(0,0,0,0.2);
+    border-radius:10px;
+    @include px2rem(padding, 8px);
+    z-index:3100;//поверх оверлея
+
+    @include media($small){
+        width:500px;
+    }
+}
+
+.modal__content{
+    border-radius:$border-radius;
+    background:#fff;
+    @include px2rem(padding, 20px 10px);
+    margin:0;
+
+    @include media($small){
+         @include px2rem(padding, $project-line-height 20px);
+    }
+}
+.modal__close{
+    position:absolute;
+    top:10px;
+    right:10px;
+    text-decoration:none;
+    color:$text-color;
+}
+
+
