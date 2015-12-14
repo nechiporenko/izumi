@@ -38,7 +38,7 @@
 
 
 /*font Lora Italic*/
-/*@font-face {
+@font-face {
 	font-family:'Lora-Italic';
 	src: url('../fonts/lora/Lora-Italic_directwrite.eot');
 	src: url('../fonts/lora/Lora-Italic_directwrite.eot?#iefix') format('embedded-opentype'),
@@ -48,17 +48,12 @@
 	font-style: italic;
 	font-stretch: normal;
 	unicode-range: U+0020-F6CE;
-}*/
-
-@font-face {
-    font-family: 'Lora-Italic';
-    src: url('../fonts/lora_/loraitalic.woff2') format('woff2'), url('../fonts/lora_loraitalic.woff') format('woff'), url('../fonts/lora_loraitalic.ttf') format('truetype');
-    font-weight: 400;
-    font-style: italic;
 }
 
+
+
 /*font Lora Bold Italic*/
-/*@font-face {
+@font-face {
 	font-family:'Lora-BoldItalic';
 	src: url('../fonts/lora/Lora-BoldItalic_directwrite.eot');
 	src: url('../fonts/lora/Lora-BoldItalic_directwrite.eot?#iefix') format('embedded-opentype'),
@@ -68,10 +63,4 @@
 	font-style: italic;
 	font-stretch: normal;
 	unicode-range: U+0020-F6CE;
-}*/
-@font-face {
-    font-family: 'Lora-BoldItalic';
-    src: url('../fonts/lora_/lorabolditalic.woff2') format('woff2'), url('../fonts/lora_/lorabolditalic.woff') format('woff'), url('../fonts/lora_/lorabolditalic.ttf') format('truetype');
-    font-weight: 700;
-    font-style: italic;
 }

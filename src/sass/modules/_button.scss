@@ -9,6 +9,7 @@
     @include font-size(16px);
     @include px2rem(line-height, 52px);
     font-family:$font-serif;
+    font-style:italic;
     letter-spacing:1px;
     text-decoration: none;
     white-space: nowrap;

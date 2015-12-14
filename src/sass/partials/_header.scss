@@ -11,18 +11,19 @@
     background:#fff;
     background:rgba(#fff, .8);
     box-sizing:border-box;
+    position:relative;
+    z-index:1000;
 
     @include media($desktop){
         position:fixed;
         top:0; left:0;
-        z-index:1000;
         @include px2rem(height, 108px);
     }
 }
 
 .b-header__inner{
-    position:relative;
-    z-index:1000;
+    /*position:relative;
+    z-index:1000;*/
 }
 
 .b-page{

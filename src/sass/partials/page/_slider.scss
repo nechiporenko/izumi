@@ -78,6 +78,7 @@
     display:block;
     @include px2rem(margin-bottom, 10px);
     font-family:$font-serif-bold;
+    font-style:italic;
     color:#fff;
     @include font-size(16px);
     text-transform:uppercase;

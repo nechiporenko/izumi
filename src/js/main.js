@@ -3,72 +3,62 @@
 // Покажем-спрячем форму поиска и блок для пользователей
 // Сообщения об отправке формы
 // Кнопка скролла страницы
-// Модальное окно
 // Если браузер не знает о svg-картинках
 // Главный слайдер 
 
 jQuery(document).ready(function ($) {
     //Кэшируем
     var $window = $(window),
+        $html=$('html'),
         $body = $('body');
+
 
     //
     // Покажем-спрячем форму поиска и блок для пользователей
     //---------------------------------------------------------------------------------------
     function slideHeaderBlocks() {
+        $body.append('<div id="overlay" class="overlay"></div>');//добавили оверлей
         var $form = $('.js-search'),
             $formBtn = $('.js-search-toggle'),
             $block = $('.js-userinfo'),
-            $blockBtn = $('.js-userinfo-toggle');
+            $blockBtn = $('.js-userinfo-toggle'),
+            $overlay = $('#overlay');
 
-        $('.b-header__controls').on('click', '.js-search-toggle', function () {
+        $('.b-header__controls').on('click', '.js-search-toggle', function () {//покажем форму поиска
             if ($(this).hasClass('active')) {
-                hideForm();
+                hideTarget($form, $formBtn);
             } else {
-                hideBlock();
+                hideTarget($block, $blockBtn);
                 showTarget($form, $formBtn);
             }
         });
 
-        $('.b-header__controls').on('click', '.js-userinfo-toggle', function () {
+        $('.b-header__controls').on('click', '.js-userinfo-toggle', function () {//покажем блок для полбзователей
             if ($(this).hasClass('active')) {
-                hideBlock();
+                hideTarget($block, $blockBtn);
             } else {
-                hideForm();
+                hideTarget($form, $formBtn);
                 showTarget($block, $blockBtn);
             }
+        });
+
+        $overlay.on('click', function () {//будем закрывать активные блоки по клику на оверлей
+            hideTarget($form, $formBtn);
+            hideTarget($block, $blockBtn);
         });
 
         function showTarget(el, btn) {
             el.addClass('active');
             btn.addClass('active');
+            $overlay.show();
         }
 
-        function hideForm() {
-            $form.removeClass('active');
-            $formBtn.removeClass('active');
-            $body.unbind('click', hideForm);
-        }
 
-        function hideBlock() {
-            $block.removeClass('active');
-            $blockBtn.removeClass('active');
-            $body.unbind('click', hideBlock);
+        function hideTarget(el, btn) {
+            el.removeClass('active');
+            btn.removeClass('active');
+            $overlay.hide();
         }
-
-        //будем закрывать по клику за пределами активных блоков:
-        $form.mouseleave(function () {
-            $body.bind('click', hideForm);
-        });
-        $form.mouseenter(function () {
-            $body.unbind('click', hideForm);
-        });
-        $block.mouseleave(function () {
-            $body.bind('click', hideBlock);
-        });
-        $block.mouseenter(function () {
-            $body.unbind('click', hideBlock);
-        });
     }
     slideHeaderBlocks();
 
@@ -78,7 +68,8 @@ jQuery(document).ready(function ($) {
     //---------------------------------------------------------------------------------------
     function initMobileMenu() {
         var $menu = $('.js-mm'),
-            $btn = $('.js-mm-toggle');
+            $btn = $('.js-mm-toggle'),
+            $overlay = $('#overlay'); //оверлей уже добавлен в документ
 
         $('.b-header__controls').on('click', '.js-mm-toggle', function () {
             if ($(this).hasClass('active')) {
@@ -88,14 +79,22 @@ jQuery(document).ready(function ($) {
             }
         });
 
+        $overlay.on('click', function () {
+            hideMenu();
+        });
+
         function showMenu() {
             $btn.addClass('active');
             $menu.addClass('active');
+            $overlay.show();
+            $html.css('overflow', 'hidden');
         }
 
         function hideMenu() {
             $btn.removeClass('active');
             $menu.removeClass('active');
+            $overlay.hide();
+            $html.css('overflow', 'auto');
         }
 
         
@@ -140,73 +139,7 @@ jQuery(document).ready(function ($) {
     }());
 
 
-    //
-    // Модальное окно
-    //---------------------------------------------------------------------------------------
-    var showModal = (function (link) {
-        var
-        method = {},
-        $overlay,
-        $modal,
-        $close;
-
-        // добавим в документ
-        $overlay = $('<div id="overlay"></div>'); //оверлей
-        $close = $('<a class="modal__close" href="#"><i class="icon-cancel"></i></a>'); //иконка закрыть
-
-
-        $close.on('click', function (e) {
-            e.preventDefault();
-            method.close();
-        });
-
-        // центрируем окно
-        method.center = function () {
-            var top, left;
-
-            top = Math.max($window.height() - $modal.outerHeight(), 0) / 2;
-            left = Math.max($window.width() - $modal.outerWidth(), 0) / 2;
-
-            $modal.css({
-                top: top + $window.scrollTop(),
-                left: left + $window.scrollLeft()
-            });
-        };
-
-
-        // открываем
-        method.open = function (link) {
-            $modal = $(link);
-            $modal.append($close);
-            method.center();
-            $body.append($overlay);
-            $window.bind('resize.modal', method.center);
-            $modal.fadeIn();
-            $overlay.fadeIn();
-
-            $overlay.bind('click', function () {
-                method.close();
-            });
-        };
-
-        // закрываем
-        method.close = function () {
-            $modal.fadeOut('fast');
-            $overlay.fadeOut('fast', function () {
-                $overlay.unbind('click').remove(); //убиваем оверлей
-            });
-            $window.unbind('resize.modal');
-        };
-
-        return method;
-    }());
-
-    // клик по кнопке с атрибутом data-modal - открываем модальное окно
-    $('[data-modal]').on('click', function (e) {//передаем айди модального окна
-        e.preventDefault();
-        var link = $(this).data('modal');
-        if (link) { showModal.open(link); }
-    });
+    
 
     //
     // Если браузер не знает о svg-картинках
