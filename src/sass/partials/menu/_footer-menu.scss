@@ -25,4 +25,9 @@
     &:active{
         color:$primary-alt;
     }
+
+    &.current{
+        color:$primary-alt;
+        cursor:default;
+    }
 }

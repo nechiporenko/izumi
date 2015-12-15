@@ -61,6 +61,11 @@
     }
 }
 
+.g-btn--small{
+    @include px2rem(height, 36px);
+    @include px2rem(line-height, 34px);
+}
+
 .no-csstransforms{
     .g-btn{
         &:hover,

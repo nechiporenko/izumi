@@ -1,4 +1,5 @@
 ﻿@import "../modules/_base.scss";
 
-@import "product/_product-block.scss";
-@import "product/_promo-slider.scss";
+@import "product/_product-block.scss";//блок товара в каталоге (или акционном слайдере)
+@import "product/_promo-slider.scss";//слайдер акционных предложений
+@import "product/_filter.scss";//фильтры в каталоге товаров

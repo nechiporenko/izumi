@@ -40,7 +40,8 @@
     text-decoration:none;
     font-family:$font-sans-medium;
     &:hover,
-    &:active{
+    &:active,
+    &.current{
         color:$primary-alt;
     }
 }

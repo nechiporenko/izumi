@@ -11,4 +11,6 @@
 
 .page{
     @include px2rem(padding, 36px 0);
+    min-height:500px;
+    box-sizing:border-box;
 }

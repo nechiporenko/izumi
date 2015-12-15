@@ -79,7 +79,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 i, em{
-    //font-family:$font-serif;
+    font-family: $font-serif;
 }
 
 b, strong{
@@ -123,22 +123,6 @@ blockquote{
 cite{
     display:block;}
 
-/* Code */
-code {
-    padding:2px 5px;
-    margin:0 2px;
-    font-size: 90%;
-    white-space: nowrap;
-    background: #F1F1F1;
-    border: 1px solid $border-color;
-    border-radius:$border-radius;
-}
-pre > code {
-  display: block;
-  padding:10px 15px;
-  white-space: pre;
-}
-
 
 /* Spacing */
 p {
@@ -152,7 +136,7 @@ input,
 textarea,
 select,
 fieldset {
-    @include px2rem(margin-bottom, $project-line-height/2);
+    @include px2rem(margin-bottom, $project-line-height);
 }
 
 pre,
