@@ -1,0 +1,28 @@
+﻿@import "../../modules/_base.scss";
+/*Catalog Product Grid*/
+.product-grid{
+    @extend .g-clearlist;
+    @extend .g-clearfix;
+}
+.product-grid__item{
+    float:left;
+    width:100%;
+    min-width:1px;
+
+    @include media($small){
+        @include span-columns(6);
+        @include omega(2n);
+    }
+
+    @include media($desktop){
+        @include span-columns(4);
+        @include omega-reset(2n);
+        @include omega(3n);
+    }
+}
+
+.lt-ie9{
+    .product-grid__item.last{
+        margin-right:0;
+    }
+}

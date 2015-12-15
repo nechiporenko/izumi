@@ -45,3 +45,14 @@
     font-family:$font-sans-bold;
     text-align:center;
 }
+
+.b-filter__btn{
+    @extend .g-btn;
+    @extend .g-btn--small;
+    width:100%;
+    border-radius:18px;
+
+    &:before{
+        border-radius:18px;
+    }
+}

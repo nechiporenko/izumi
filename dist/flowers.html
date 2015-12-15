@@ -170,8 +170,8 @@
                     <div id="priceslider" class="priceslider js-priceslider"></div>
                     <!--/PRICESLIDER END-->
                     
-                    <button type="button" class="g-btn g-btn--small g-full-width"><i class="icon-ok"></i>Применить фильтр</button>
-                    <button type="button" class="g-btn g-btn--small g-full-width"><i class="icon-cancel"></i>Очистить фильтр</button>
+                    <button type="button" class="b-filter__btn" data-loader><i class="icon-ok"></i>Применить фильтр</button>
+                    <button type="button" class="b-filter__btn"><i class="icon-cancel"></i>Очистить фильтр</button>
                 </div><!--/g-col-->
             </div><!--/g-row-->
         </div><!--/g-container-->
@@ -181,9 +181,334 @@
     <!--MAIN SECTION START-->
     <main class="page">
         <div class="g-container">
-            
+            <ul class="product-grid">
+                <li class="product-grid__item">
+                    <div class="product">
+                        <a href="#" class="product__link">
+                            <figure class="product__thumb">
+                                <img src="img/products/product01.jpg" class="product__img" alt="Product" />
+                            </figure>
+                        </a>
+                        <div class="product__info">
+                            <div class="product__row">
+                                <span class="product__id">4735</span>
+                                <a href="#" class="product__title">Букет №1</a>
+                            </div><!--/product__row-->
+                            <div class="product__row">
+                                <div class="product__col product__col--price">
+                                    <span class="price price--old">
+                                        <span class="price__val">420</span>
+                                        <span class="price__curr">грн</span>
+                                    </span>
+                                    <span class="price price--new">
+                                        <span class="price__val">370</span>
+                                        <span class="price__curr">грн</span>
+                                    </span>
+                                </div>
+                                <div class="product__col product__col--btn">
+                                    <button type="button" class="product__btn" data-modal="#to_checkout">Купить</button>
+                                </div>
+                            </div><!--/product__row-->
+                        </div><!--/product__info-->
+                    </div><!--/product-->
+                </li>
+                <li class="product-grid__item">
+                    <div class="product">
+                        <a href="#" class="product__link">
+                            <figure class="product__thumb">
+                                <img src="img/products/product02.jpg" class="product__img" alt="Product" />
+                            </figure>
+                        </a>
+                        <div class="product__info">
+                            <div class="product__row">
+                                <span class="product__id">4915</span>
+                                <a href="#" class="product__title">Букет №24</a>
+                            </div><!--/product__row-->
+                            <div class="product__row">
+                                <div class="product__col product__col--price">
+                                    <span class="price">
+                                        <span class="price__val">580</span>
+                                        <span class="price__curr">грн</span>
+                                    </span>
+                                </div>
+                                <div class="product__col product__col--btn">
+                                    <button type="button" class="product__btn" data-modal="#to_checkout">Купить</button>
+                                </div>
+                            </div><!--/product__row-->
+                        </div><!--/product__info-->
+                    </div><!--/product-->
+                </li>
+                <li class="product-grid__item">
+                    <div class="product">
+                        <a href="#" class="product__link">
+                            <figure class="product__thumb">
+                                <img src="img/products/product03.jpg" class="product__img" alt="Product" />
+                            </figure>
+                        </a>
+                        <div class="product__info">
+                            <div class="product__row">
+                                <span class="product__id">4735</span>
+                                <a href="#" class="product__title">Букет №67</a>
+                            </div><!--/product__row-->
+                            <div class="product__row">
+                                <div class="product__col product__col--price">
+                                    <span class="price price--old">
+                                        <span class="price__val">12420</span>
+                                        <span class="price__curr">грн</span>
+                                    </span>
+                                    <span class="price price--new">
+                                        <span class="price__val">11370</span>
+                                        <span class="price__curr">грн</span>
+                                    </span>
+                                </div>
+                                <div class="product__col product__col--btn">
+                                    <button type="button" class="product__btn" data-modal="#to_checkout">Купить</button>
+                                </div>
+                            </div><!--/product__row-->
+                        </div><!--/product__info-->
+                    </div><!--/product-->
+                </li>
+                <li class="product-grid__item">
+                    <div class="product">
+                        <a href="#" class="product__link">
+                            <figure class="product__thumb">
+                                <img src="img/products/product01.jpg" class="product__img" alt="Product" />
+                            </figure>
+                        </a>
+                        <div class="product__info">
+                            <div class="product__row">
+                                <span class="product__id">4735</span>
+                                <a href="#" class="product__title">Букет №1</a>
+                            </div><!--/product__row-->
+                            <div class="product__row">
+                                <div class="product__col product__col--price">
+                                    <span class="price">
+                                        <span class="price__val">420</span>
+                                        <span class="price__curr">грн</span>
+                                    </span>
+                                </div>
+                                <div class="product__col product__col--btn">
+                                    <button type="button" class="product__btn" data-modal="#to_checkout">Купить</button>
+                                </div>
+                            </div><!--/product__row-->
+                        </div><!--/product__info-->
+                    </div><!--/product-->
+                </li>
+                <li class="product-grid__item">
+                    <div class="product">
+                        <a href="#" class="product__link">
+                            <figure class="product__thumb">
+                                <img src="img/products/product02.jpg" class="product__img" alt="Product" />
+                            </figure>
+                        </a>
+                        <div class="product__info">
+                            <div class="product__row">
+                                <span class="product__id">4915</span>
+                                <a href="#" class="product__title">Букет №24</a>
+                            </div><!--/product__row-->
+                            <div class="product__row">
+                                <div class="product__col product__col--price">
+                                    <span class="price">
+                                        <span class="price__val">1580</span>
+                                        <span class="price__curr">грн</span>
+                                    </span>
+                                </div>
+                                <div class="product__col product__col--btn">
+                                    <button type="button" class="product__btn" data-modal="#to_checkout">Купить</button>
+                                </div>
+                            </div><!--/product__row-->
+                        </div><!--/product__info-->
+                    </div><!--/product-->
+                </li>
+                <li class="product-grid__item">
+                    <div class="product">
+                        <a href="#" class="product__link">
+                            <figure class="product__thumb">
+                                <img src="img/products/product03.jpg" class="product__img" alt="Product" />
+                            </figure>
+                        </a>
+                        <div class="product__info">
+                            <div class="product__row">
+                                <span class="product__id">4735</span>
+                                <a href="#" class="product__title">Букет №67</a>
+                            </div><!--/product__row-->
+                            <div class="product__row">
+                                <div class="product__col product__col--price">
+                                    <span class="price">
+                                        <span class="price__val">12420</span>
+                                        <span class="price__curr">грн</span>
+                                    </span>
+                                </div>
+                                <div class="product__col product__col--btn">
+                                    <button type="button" class="product__btn" data-modal="#to_checkout">Купить</button>
+                                </div>
+                            </div><!--/product__row-->
+                        </div><!--/product__info-->
+                    </div><!--/product-->
+                </li>
+                <li class="product-grid__item">
+                    <div class="product">
+                        <a href="#" class="product__link">
+                            <figure class="product__thumb">
+                                <img src="img/products/product01.jpg" class="product__img" alt="Product" />
+                            </figure>
+                        </a>
+                        <div class="product__info">
+                            <div class="product__row">
+                                <span class="product__id">4735</span>
+                                <a href="#" class="product__title">Букет №1</a>
+                            </div><!--/product__row-->
+                            <div class="product__row">
+                                <div class="product__col product__col--price">
+                                    <span class="price">
+                                        <span class="price__val">420</span>
+                                        <span class="price__curr">грн</span>
+                                    </span>
+                                </div>
+                                <div class="product__col product__col--btn">
+                                    <button type="button" class="product__btn" data-modal="#to_checkout">Купить</button>
+                                </div>
+                            </div><!--/product__row-->
+                        </div><!--/product__info-->
+                    </div><!--/product-->
+                </li>
+                <li class="product-grid__item">
+                    <div class="product">
+                        <a href="#" class="product__link">
+                            <figure class="product__thumb">
+                                <img src="img/products/product02.jpg" class="product__img" alt="Product" />
+                            </figure>
+                        </a>
+                        <div class="product__info">
+                            <div class="product__row">
+                                <span class="product__id">4915</span>
+                                <a href="#" class="product__title">Букет №24</a>
+                            </div><!--/product__row-->
+                            <div class="product__row">
+                                <div class="product__col product__col--price">
+                                    <span class="price">
+                                        <span class="price__val">1580</span>
+                                        <span class="price__curr">грн</span>
+                                    </span>
+                                </div>
+                                <div class="product__col product__col--btn">
+                                    <button type="button" class="product__btn" data-modal="#to_checkout">Купить</button>
+                                </div>
+                            </div><!--/product__row-->
+                        </div><!--/product__info-->
+                    </div><!--/product-->
+                </li>
+                <li class="product-grid__item">
+                    <div class="product">
+                        <a href="#" class="product__link">
+                            <figure class="product__thumb">
+                                <img src="img/products/product03.jpg" class="product__img" alt="Product" />
+                            </figure>
+                        </a>
+                        <div class="product__info">
+                            <div class="product__row">
+                                <span class="product__id">4735</span>
+                                <a href="#" class="product__title">Букет №67</a>
+                            </div><!--/product__row-->
+                            <div class="product__row">
+                                <div class="product__col product__col--price">
+                                    <span class="price">
+                                        <span class="price__val">12420</span>
+                                        <span class="price__curr">грн</span>
+                                    </span>
+                                </div>
+                                <div class="product__col product__col--btn">
+                                    <button type="button" class="product__btn" data-modal="#to_checkout">Купить</button>
+                                </div>
+                            </div><!--/product__row-->
+                        </div><!--/product__info-->
+                    </div><!--/product-->
+                </li>
+                <li class="product-grid__item">
+                    <div class="product">
+                        <a href="#" class="product__link">
+                            <figure class="product__thumb">
+                                <img src="img/products/product01.jpg" class="product__img" alt="Product" />
+                            </figure>
+                        </a>
+                        <div class="product__info">
+                            <div class="product__row">
+                                <span class="product__id">4735</span>
+                                <a href="#" class="product__title">Букет №1</a>
+                            </div><!--/product__row-->
+                            <div class="product__row">
+                                <div class="product__col product__col--price">
+                                    <span class="price">
+                                        <span class="price__val">420</span>
+                                        <span class="price__curr">грн</span>
+                                    </span>
+                                </div>
+                                <div class="product__col product__col--btn">
+                                    <button type="button" class="product__btn" data-modal="#to_checkout">Купить</button>
+                                </div>
+                            </div><!--/product__row-->
+                        </div><!--/product__info-->
+                    </div><!--/product-->
+                </li>
+                <li class="product-grid__item">
+                    <div class="product">
+                        <a href="#" class="product__link">
+                            <figure class="product__thumb">
+                                <img src="img/products/product02.jpg" class="product__img" alt="Product" />
+                            </figure>
+                        </a>
+                        <div class="product__info">
+                            <div class="product__row">
+                                <span class="product__id">4915</span>
+                                <a href="#" class="product__title">Букет №24</a>
+                            </div><!--/product__row-->
+                            <div class="product__row">
+                                <div class="product__col product__col--price">
+                                    <span class="price">
+                                        <span class="price__val">1580</span>
+                                        <span class="price__curr">грн</span>
+                                    </span>
+                                </div>
+                                <div class="product__col product__col--btn">
+                                    <button type="button" class="product__btn" data-modal="#to_checkout">Купить</button>
+                                </div>
+                            </div><!--/product__row-->
+                        </div><!--/product__info-->
+                    </div><!--/product-->
+                </li>
+                <li class="product-grid__item">
+                    <div class="product">
+                        <a href="#" class="product__link">
+                            <figure class="product__thumb">
+                                <img src="img/products/product03.jpg" class="product__img" alt="Product" />
+                            </figure>
+                        </a>
+                        <div class="product__info">
+                            <div class="product__row">
+                                <span class="product__id">4735</span>
+                                <a href="#" class="product__title">Букет №67</a>
+                            </div><!--/product__row-->
+                            <div class="product__row">
+                                <div class="product__col product__col--price">
+                                    <span class="price">
+                                        <span class="price__val">12420</span>
+                                        <span class="price__curr">грн</span>
+                                    </span>
+                                </div>
+                                <div class="product__col product__col--btn">
+                                    <button type="button" class="product__btn" data-modal="#to_checkout">Купить</button>
+                                </div>
+                            </div><!--/product__row-->
+                        </div><!--/product__info-->
+                    </div><!--/product-->
+                </li>
+            </ul>
+            <div class="g-row">
+                <div class="g-col g-col--one-third-center">
+                    <button type="button" class="b-filter__btn" data-loader>Больше товаров</button>
+                </div>
+            </div>
         </div><!--/g-container-->
-
     </main>
     <!--/MAIN SECTION END-->
     
@@ -226,6 +551,15 @@
         </ul>
     </nav>
     <!--/MOBILE MENU END-->
+
+    <!--MODAL WINDOW ADD-TO-BASKET START-->
+    <div class="modal" id="to_checkout">
+        <div class="modal__content">
+            <div class="g-title">Товар добавлен в корзину</div>
+            <a href="cart.html" class="g-btn g-full-width">Оформить заказ</a>
+        </div>
+    </div>
+    <!--/MODAL WINDOW ADD-TO-BASKET END-->
 
     <!--FOOTER START-->
     <footer class="b-footer">

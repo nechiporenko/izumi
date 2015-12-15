@@ -1,7 +1,9 @@
 ﻿@import "../../modules/_base.scss";
 /*Product Block*/
 .product{
-    margin-bottom:24px;
+    width:100%;
+    @include px2rem(max-width, 300px);
+    margin:0 auto 24px;
 }
 .product__link{
     display:block;

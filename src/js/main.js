@@ -3,14 +3,15 @@
 // Покажем-спрячем форму поиска и блок для пользователей
 // Сообщения об отправке формы
 // Кнопка скролла страницы
-// Если браузер не знает о svg-картинках
-// Если браузер не знает о красивых чекбоксах
 // Главный слайдер
 // Слайдер акционных предложений
 // Слайдер цитат
 // Модальное окно
 // Выбор цвета (чекбокс colorbox)
 // Слайдер (фильтр) цен в каталоге
+// Иконка лоадера на время аякс-закрузки контента
+// Если браузер не знает о svg-картинках
+// Если браузер не знает о красивых чекбоксах
 
 jQuery(document).ready(function ($) {
     //Кэшируем
@@ -168,25 +169,6 @@ jQuery(document).ready(function ($) {
         });
     }());
 
-
-    
-
-    //
-    // Если браузер не знает о svg-картинках
-    //---------------------------------------------------------------------------------------
-    if (!Modernizr.svg) {
-        $('img[src*="svg"]').attr('src', function () {
-            return $(this).attr('src').replace('.svg', '.png');
-        });
-    }
-
-    //
-    // Если браузер не знает о красивых чекбоксах
-    //---------------------------------------------------------------------------------------
-    if ($html.hasClass('lt-ie9')) {
-        $('input[type="checkbox"]').removeClass('css-checkbox');
-    }
-
     
     //
     // Главный слайдер 
@@ -222,8 +204,8 @@ jQuery(document).ready(function ($) {
                     common = {
                         minSlides: 1,
                         moveSlides: 1,
-                        slideWidth: 300,
-                        slideMargin: 20,
+                        slideWidth: 298,
+                        slideMargin: 23,
                         auto:false,
                         pager: false,
                         infiniteLoop: false,
@@ -419,4 +401,46 @@ jQuery(document).ready(function ($) {
         initPriceSlider();
     };
 
+    //
+    // Иконка лоадера на время аякс-закрузки контента
+    //---------------------------------------------------------------------------------------
+    var contentLoader = (function () {
+        $loader = $('<span class="loader"></span>');
+
+        var method = {};
+
+        method.showIcon = function () {
+            $body.append($loader);
+            $overlay.addClass('full').show();
+            $loader.show();
+        }
+        method.hideIcon = function () {
+            $loader.hide();
+            $overlay.removeClass('full').hide();
+            $loader.remove();
+        }
+        return method;
+    })();
+
+    $('button[data-loader]').on('click', function () {//// ДЛЯ ПРИМЕРА - УДАЛИТЬ ИЗ РЕАЛЬНОГО ПРИЛОЖЕНИЯ !!!!
+        contentLoader.showIcon();
+        setTimeout(contentLoader.hideIcon, 600);
+    });
+
+    //
+    // Если браузер не знает о svg-картинках
+    //---------------------------------------------------------------------------------------
+    if (!Modernizr.svg) {
+        $('img[src*="svg"]').attr('src', function () {
+            return $(this).attr('src').replace('.svg', '.png');
+        });
+    }
+
+    //
+    // Если браузер не знает о красивых чекбоксах
+    //---------------------------------------------------------------------------------------
+    if ($html.hasClass('lt-ie9')) {
+        $('input[type="checkbox"]').removeClass('css-checkbox');
+        $('.product-grid__item:nth-child(3n)').addClass('last');
+    }
 });
