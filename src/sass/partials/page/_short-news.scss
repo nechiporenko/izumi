@@ -1,0 +1,22 @@
+﻿@import "../../modules/_base.scss";
+/*Short Nes Section*/
+.b-news{}
+.b-news__date{
+    @include font-size(14px);
+}
+.b-news__title{
+    display:block;
+    font-family:$font-sans-bold;
+    color:$primary;
+    text-decoration:none;
+    text-transform:uppercase;
+    @include font-size(14px);
+
+    &:hover,
+    &:active{
+        color:$primary-alt;
+    }
+}
+.b-news__item{
+    @include font-size(14px);
+}

@@ -1,0 +1,25 @@
+﻿@import "../../modules/_base.scss";
+/*Advantages Section*/
+.advantage{
+    padding:36px 0;
+    background:#f6f4f3;
+}
+
+.advantage__item{
+    margin-bottom:18px;
+    text-align:center;
+}
+.advantage__icon{
+    display:inline-block;
+    margin-bottom:10px;
+    @include font-size(32px);
+    color:$primary;
+}
+.advantage__info{
+    @include font-size(14px);
+}
+.advantage__title{
+    font-family:$font-sans-bold;
+    @include font-size(14px);
+    text-transform:uppercase;
+}

@@ -58,7 +58,7 @@ $loader:   '../img/loader.gif';
 
 		&.bx-default-pager a {
 			background: $primary;
-			text-indent: -9999px;
+			@include hide-text();
 			display: block;
 			width: 10px;
 			height: 10px;

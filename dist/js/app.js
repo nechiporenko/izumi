@@ -42,6 +42,7 @@
 // Если браузер не знает о svg-картинках
 // Главный слайдер
 // Слайдер акционных предложений
+// Слайдер цитат
 // Модальное окно
 
 jQuery(document).ready(function ($) {
@@ -249,6 +250,7 @@ jQuery(document).ready(function ($) {
                         moveSlides: 1,
                         slideWidth: 300,
                         slideMargin: 20,
+                        auto:false,
                         pager: false,
                         infiniteLoop: false,
                         hideControlOnEnd: true
@@ -277,8 +279,16 @@ jQuery(document).ready(function ($) {
     }
     if ($('.js-promo-slider').length) { initPromoSlider(); }
 
-
-
+    //
+    // Слайдер цитат
+    //---------------------------------------------------------------------------------------
+    function initQuoteSlider() {
+        var $slider = $('.js-quote-slider').bxSlider({
+            auto: false,
+            pager:false,
+        });
+    }
+    if ($('.js-quote-slider').length) { initQuoteSlider();}
     //
     // Модальное окно
     //---------------------------------------------------------------------------------------

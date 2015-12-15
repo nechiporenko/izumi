@@ -1,0 +1,13 @@
+﻿@import "../../modules/_base.scss";
+/*Footer Contacts Info*/
+.f-contacts{
+    @extend .g-clearlist;
+    letter-spacing:rem(-.4px);
+}
+.f-contacts__item{
+    @extend .f-menu__item;
+}
+
+.f-contacts__link{
+    @extend .f-menu__link;
+}

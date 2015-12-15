@@ -1,0 +1,28 @@
+﻿@import "../../modules/_base.scss";
+/*Footer Menu*/
+.f-menu{
+    padding:0;
+    list-style-type:none;
+    margin-bottom:36px;
+
+    @include media($tablet){
+        margin-bottom:0;
+    }
+}
+.f-menu__item{
+    display:block;
+    margin-bottom:18px;
+    @include font-size(14px);
+
+    &:last-child{
+        margin-bottom:0;
+    }
+}
+.f-menu__link{
+    text-decoration:none;
+
+    &:hover,
+    &:active{
+        color:$primary-alt;
+    }
+}

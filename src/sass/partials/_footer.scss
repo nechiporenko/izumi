@@ -1,2 +1,43 @@
 @import "../modules/base";
 
+@import "footer/_contacts.scss";
+@import "footer/_social.scss";
+
+/*Footer*/
+.b-footer{
+    background:#f6f4f3;
+    color:$primary;
+    text-align:center;
+
+    @include media($tablet){
+        text-align:left;
+    }
+}
+.b-footer__main{
+    padding:36px 0;
+}
+.b-footer__sole{
+    padding:16px 0;
+}
+.b-footer__title{
+    display:block;
+    margin-bottom:18px;
+    font-family:$font-sans-bold;
+    color:$primary;
+    @include font-size(14px);
+    line-height:1.2;
+    text-transform:uppercase;
+
+    @include media($tablet){
+        margin-bottom:36px;
+    }
+}
+
+.b-footer__info{
+    @include font-size(12px);
+    line-height:1.2;
+
+    @include media($tablet){
+        margin:4px 0;
+    }
+}

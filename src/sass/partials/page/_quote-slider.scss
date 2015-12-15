@@ -1,0 +1,41 @@
+﻿@import "../../modules/_base.scss";
+/*Quotes Slider*/
+.quote{
+    padding:3*$project-line-height 0;
+    position:relative;
+
+    .bx-wrapper{
+        .bx-controls-direction a{
+            display:block;
+            top:35%;
+        }
+    }
+}
+.quote__list{
+    @extend .g-clearlist;
+}
+.quote__text{
+    padding:0 20px;
+    margin:0;
+    font-family:$font-serif;
+    font-style:italic;
+    line-height:1.5;
+    @include font-size(18px);
+    text-align:center;
+
+    @include media($tablet){
+        @include font-size(24px);
+    }
+}
+.quote__author{
+    margin:$project-line-height 0;
+    @include font-size(14px);
+    font-family:$font-sans-bold;
+    font-style:normal;
+    text-transform:uppercase;
+    color:$primary;
+
+    @include media($tablet){
+        margin:3*$project-line-height 0 $project-line-height;
+    }
+}

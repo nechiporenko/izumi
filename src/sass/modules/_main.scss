@@ -116,16 +116,12 @@ ol ul {
 
 /* Blockquote */
 blockquote{
-    font-size:120%;
-    line-height:1.6;
+    line-height:1.5;
+    font-family:$font-serif;
     font-style: italic;
-    @include px2rem(padding, 0 0 0 30px);
-    border-left:2px solid $primary;
 }
 cite{
-    display:block;
-    font-size:75%;
-}
+    display:block;}
 
 /* Code */
 code {
