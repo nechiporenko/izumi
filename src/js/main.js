@@ -10,6 +10,8 @@
 // Выбор цвета (чекбокс colorbox)
 // Слайдер (фильтр) цен в каталоге
 // Иконка лоадера на время аякс-закрузки контента
+// Лайтбокс
+// Степперы (кол-во товара)
 // Если браузер не знает о svg-картинках
 // Если браузер не знает о красивых чекбоксах
 
@@ -426,6 +428,34 @@ jQuery(document).ready(function ($) {
         contentLoader.showIcon();
         setTimeout(contentLoader.hideIcon, 600);
     });
+
+    //
+    // Лайтбокс
+    //---------------------------------------------------------------------------------------
+    $('.js-popup').lightbox({ blur: false });
+
+    //
+    // Степперы (кол-во товара)
+    //---------------------------------------------------------------------------------------
+    function initStepper() {
+        $('.js-stepper').stepper({
+            'incrementButton': '<i class="icon-plus"></i>',
+            'decrementButton': '<i class="icon-minus"></i>',
+            'limit': [1, ],
+            'allowWheel': false,
+            'allowArrows': false
+        });
+
+        $('.js-stepper').on('change', function () {//костыль
+            var val = $(this).val();
+            if (val == "0" || val == "") {
+                $(this).val(1);
+            }
+        });
+    };
+
+    if ($('.js-stepper').length) { initStepper();}
+
 
     //
     // Если браузер не знает о svg-картинках

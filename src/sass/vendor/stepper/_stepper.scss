@@ -1,0 +1,93 @@
+﻿@import "../../modules/_base.scss";
+/*Numeric Stepper*/
+.stepper-wrap{
+    display:inline-block;
+    width:204px;
+    position:relative;
+    z-index:1;
+}
+
+.stepper{
+    display:block;
+    width:116px;
+    height:32px;
+    box-sizing:border-box;
+    padding:0;
+    margin:0 auto;
+    border:1px solid $border-color;
+    border-radius:16px;
+    @include font-size(16px);
+    font-family:$font-serif;
+    font-style:italic;
+    color:$text-color;
+    text-align:center;
+    background:#fff;
+    
+    &:hover,
+    &:focus{
+        border-color:$primary;
+        color:$primary;
+        outline:0;
+    }
+}
+
+.stepper-btn-wrap{
+    position:absolute;
+    top:0; right:0; bottom:0; left:0;
+    z-index:-1;
+
+    .button{
+        display:block;
+        position:absolute;
+        width:32px;
+        height:32px;
+        line-height:32px;
+        border:1px solid $border-color;
+        border-radius:50%;
+        box-sizing:border-box;
+        @include font-size(16px);
+        text-align:center;
+        text-decoration:none;
+        cursor:pointer;
+
+        &:hover,
+        &:active{
+            color:$primary;
+            border-color:$primary;
+        }
+    }
+}
+
+.stepper-btn-dwn{
+    left:0;
+}
+
+.stepper-btn-up{
+    right:0;
+}
+
+/*.stepper-btn-wrap{
+    .button{
+        padding:0;
+        margin:0;
+        width:36px;
+        @include font-size(20px);
+        position:absolute;
+        top:0;
+        z-index:5;
+    }
+    .stepper-btn-up{
+        right:0;
+        border-top-left-radius:0;
+        border-bottom-left-radius:0;
+    }
+    .stepper-btn-dwn{
+        left:0;
+        border-top-right-radius:0;
+        border-bottom-right-radius:0;
+    }
+    [class^="icon-"]:before, [class*=" icon-"]:before{
+        margin:0;
+    }
+}*/
+
