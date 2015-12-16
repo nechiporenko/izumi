@@ -1,0 +1,46 @@
+﻿@import "../../modules/_base.scss";
+/*Product Cart*/
+.b-cart{}
+.b-cart__title{
+    display:block;
+    @include font-size(14px);
+    font-family:$font-sans-bold;
+    color:$primary;
+    text-transform:uppercase;
+    margin-bottom:18px;
+    font-weight:700;
+}
+.b-cart__count{
+    color:$primary-alt;
+}
+.b-cart__list{
+    @extend .g-clearlist;
+}
+.b-cart__item{
+    display:block;
+    margin-bottom:18px;
+    @extend .g-clearfix;
+}
+
+.b-cart__link{
+    @extend .product__link;
+    max-width:140px;
+    margin:0 auto 10px;
+
+    @include media($tablet){
+        @include span-columns(2);
+    }
+}
+.b-cart__thumb{
+    @extend .product__thumb;
+}
+.b-cart__img{
+    @extend .g-img-centered;
+}
+
+.cart-product{
+    @include media($tablet){
+       @include span-columns(10);
+       @include omega();
+    }
+}

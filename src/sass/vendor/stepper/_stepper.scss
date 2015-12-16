@@ -56,6 +56,11 @@
             border-color:$primary;
         }
     }
+
+    [class^="icon-"]:before, [class*=" icon-"]:before{
+        margin:0;
+    }
+
 }
 
 .stepper-btn-dwn{
