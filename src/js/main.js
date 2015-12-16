@@ -12,6 +12,7 @@
 // Иконка лоадера на время аякс-закрузки контента
 // Лайтбокс
 // Степперы (кол-во товара)
+// Сообщения об отправке формы
 // Если браузер не знает о svg-картинках
 // Если браузер не знает о красивых чекбоксах
 
@@ -454,7 +455,21 @@ jQuery(document).ready(function ($) {
         });
     };
 
-    if ($('.js-stepper').length) { initStepper();}
+    if ($('.js-stepper').length) { initStepper(); }
+
+    //
+    // Сообщения об отправке формы
+    //---------------------------------------------------------------------------------------
+    // после аякс-отправки формы ($form), если все ок - $form.find('.g-notice--ok').fadeIn();
+    // если вернуло ошибку - $form.find('.g-notice--bad').fadeIn();
+    var showFormNotice = (function () {
+        var $notice = $('.js-notice');
+        $notice.append('<a class="g-notice__close"><i class="icon-cancel"></i></a>'); //иконка закрытия
+        $notice.on('click', '.g-notice__close', function (e) {//закроем блок по клику на иконку
+            e.preventDefault();
+            $(this).parent('div').fadeOut();
+        });
+    }());
 
 
     //

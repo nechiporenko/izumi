@@ -1,0 +1,33 @@
+﻿@import "../../modules/_base.scss";
+/*Product Review Section*/
+.b-review{}
+.b-review__title{
+    display:block;
+    margin-bottom:15px;
+    @include font-size(24px);
+    font-family:$font-serif;
+    font-style:italic;
+    font-weight:normal;
+    text-transform:uppercase;
+    color:$primary;
+}
+.b-review__subtitle{
+    @extend .b-description__title;
+    margin-bottom:35px;
+}
+.b-review__list{
+    list-style-type:none;
+    padding:0;
+    margin:12px 0 36px;
+}
+.b-review__item{
+    margin-bottom:36px;
+    @include font-size(14px);
+}
+.b-review__name{
+    display:block;
+    @include font-size(14px);
+    text-transform:uppercase;
+    color:$primary;
+    font-family:$font-sans-bold;
+}

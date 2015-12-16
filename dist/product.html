@@ -54,7 +54,7 @@
                             <a href="flowers.html" class="b-menu__link current">Цветы</a>
                         </li>
                         <li class="b-menu__item">
-                            <a href="bouquets.html" class="b-menu__link">Букеты</a>
+                            <a href="flowers.html" class="b-menu__link">Букеты</a>
                         </li>
                         <li class="b-menu__item">
                             <a href="gift.html" class="b-menu__link">Подарок</a>
@@ -95,28 +95,142 @@
     <!--MAIN SECTION START-->
     <main class="page">
         <div class="g-container">
+            <!--BREADCRUMBS START-->
+            <ol class="breadcrumbs">
+                <li class="breadcrumbs__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <a href="index.html" class="breadcrumbs__link" itemprop="url">
+                        <span itemprop="title">Главная</span>
+                    </a>
+                </li>
+                <li class="breadcrumbs__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <a href="flowers.html" class="breadcrumbs__link" itemprop="url">
+                        <span itemprop="title">Букеты</span>
+                    </a>
+                </li>
+                <li class="breadcrumbs__item">
+                    Букет №64
+                </li>
+            </ol>
+            <!--/BREADCRUMBS END-->
 
             <!--SINGLE PRODUCT SECTION START-->
-            <div class="b-product">
-                <span class="b-product__id">4735</span>
-                <h1 class="b-product__title">Букет №64</h1>
+            <article class="b-product" itemscope itemtype="http://schema.org/Product">
+                <header class="b-product__name">
+                    <span class="b-product__id" itemprop="productID">4735</span>
+                    <h1 class="b-product__title" itemprop="name">Букет №64</h1>
+                </header>
+
                 <div class="g-row">
                     <div class="g-col g-col--one-half">
                         <a href="img/products/product-xl.jpg" class="b-product__img-link js-popup" data-caption="Букет №64">
                             <figure class="b-product__thumb">
-                                <img src="img/products/product-md.jpg" class="b-product__img" alt="Product Picture" />
+                                <img src="img/products/product-md.jpg" class="b-product__img" alt="Product Picture" itemprop="image" />
                             </figure>
                         </a>
                     </div><!--/g-col-->
                     <div class="g-col g-col--one-half">
+
                         <div class="b-count">
                             <label class="b-count__label">Количество</label>
                             <input type="text" class="stepper js-stepper" value="1" />
                         </div>
+
+                        <div class="b-product__price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                            <!--<span class="b-price">
+                                <span class="b-price__val" itemprop="price">540</span>
+                                <span class="b-price__count">грн</span>
+                            </span>-->
+                            <span class="b-price b-price--old">
+                                <span class="b-price__val">540</span>
+                                <span class="b-price__count">грн</span>
+                            </span>
+                            <span class="b-price b-price--new">
+                                <span class="b-price__val" itemprop="price">460</span>
+                                <span class="b-price__count">грн</span>
+                            </span>
+                            <meta itemprop="priceCurrency" content="UAH" />
+                        </div><!--/b-product__price-->
+
+                        <div class="b-product__buy">
+                            <button type="button" class="b-product__btn" data-modal="#to_checkout">Купить</button>
+                        </div>
+
+                        <div class="b-description" itemprop="description">
+                            <span class="b-description__title">Доставка - 60 грн</span>
+                            <p>Pellentesque <b>habitant morbi</b> tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <a href="#">Aenean ultricies</a> mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+                        </div><!--/b-description-->
+
                     </div><!--/g-col-->
                 </div><!--/g-row-->
-            </div>
+            </article>
             <!--/SINGLE PRODUCT SECTION END-->
+
+            <!--REVIEW SECTION START-->
+            <div class="b-review">
+
+                    <span class="b-review__title">Отзывы наших клиентов</span>
+                    <span class="b-review__subtitle">Оставить отзыв</span>
+
+                <!--REVIEW FORM START-->
+                <form>
+                    <label class="g-visuallyhidden">Текст отзыва</label>
+                    <textarea class="g-textarea" placeholder="введите текст отзыва" required></textarea>
+
+                    <div class="g-notice g-notice--ok js-notice">
+                        <span class="g-title">Спасибо за ваш отзыв!</span>
+                        <p>Ваш отзыв появится на сайте после модерации</p>
+                    </div>
+                    <div class="g-notice g-notice--bad js-notice">
+                        <span class="g-title">Произошла ошибка</span>
+                        <p>Попробуйте немного позже...</p>
+                    </div>
+
+                    <div class="g-row">
+                        <div class="g-col g-col--one-half">
+                            <label class="g-visuallyhidden">Ваше имя</label>
+                            <input type="text" class="g-input" placeholder="введите Ваше имя" required />
+                        </div>
+                        <div class="g-col g-col--one-half">
+                            <button type="submit" class="g-btn g-btn--small g-full-width">Отправить</button>
+                        </div>
+                    </div>
+                </form>
+                <!--/REVIEW FORM END-->
+
+                <ul class="b-review__list">
+                    <li class="b-review__item">
+                        <p>25.11.2015</p>
+                        <span class="b-review__name">Имя клиента</span>
+                        <p>
+                            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+                        </p>
+                    </li>
+                    <li class="b-review__item">
+                        <p>25.11.2015</p>
+                        <span class="b-review__name">Имя клиента</span>
+                        <p>
+                            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+                        </p>
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                            <li>Aliquam tincidunt mauris eu risus.</li>
+                            <li>Vestibulum auctor dapibus neque.</li>
+                        </ul>
+                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                    </li>
+                    <li class="b-review__item">
+                        <p>25.11.2015</p>
+                        <span class="b-review__name">Имя клиента</span>
+                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+                    </li>
+                </ul>
+                <div class="g-row">
+                    <div class="g-col g-col--one-third-center">
+                        <button type="button" class="g-btn g-btn--small g-full-width" data-loader>Больше отзывов</button>
+                    </div>
+                </div>
+            </div>
+            <!--/REVIEW SECTION END-->
 
         </div><!--/g-container-->
     </main>
@@ -150,7 +264,7 @@
                 <a href="flowers.html" class="m-menu__link current">Цветы</a>
             </li>
             <li class="m-menu__item">
-                <a href="bouquets.html" class="m-menu__link">Букеты</a>
+                <a href="flowers.html" class="m-menu__link">Букеты</a>
             </li>
             <li class="m-menu__item">
                 <a href="gift.html" class="m-menu__link">Подарок</a>
@@ -161,6 +275,15 @@
         </ul>
     </nav>
     <!--/MOBILE MENU END-->
+
+    <!--MODAL WINDOW ADD-TO-BASKET START-->
+    <div class="modal" id="to_checkout">
+        <div class="modal__content">
+            <div class="g-title">Товар добавлен в корзину</div>
+            <a href="cart.html" class="g-btn g-full-width">Оформить заказ</a>
+        </div>
+    </div>
+    <!--/MODAL WINDOW ADD-TO-BASKET END-->
 
     <!--FOOTER START-->
     <footer class="b-footer">
@@ -193,7 +316,7 @@
                             <a href="flowers.html" class="f-menu__link current">Цветы</a>
                         </li>
                         <li class="f-menu__item">
-                            <a href="bouquets.html" class="f-menu__link">Букеты</a>
+                            <a href="flowers.html" class="f-menu__link">Букеты</a>
                         </li>
                         <li class="f-menu__item">
                             <a href="gift.html" class="f-menu__link">Подарок</a>

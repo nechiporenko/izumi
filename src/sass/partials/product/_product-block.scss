@@ -37,6 +37,7 @@
 }
 .product__row{
     @extend .g-clearfix;
+    @include px2rem(line-height, 20px);
 }
 
 .product__col{
@@ -60,11 +61,11 @@
     }
 }
 .product__id{
-    float:left;
+    display:inline-block;
     @include px2rem(height, 18px);
-    @include px2rem(line-height, 20px);
+    @include px2rem(line-height, 22px);
     padding:0 16px;
-    margin-right:10px;
+    margin-right:5px;
     border-radius:9px;
     white-space:nowrap;
     color:$primary;
@@ -121,6 +122,14 @@
 }
 
 /*Product Sale Button*/
+.b-product__buy{
+    margin-bottom:12px;
+    text-align:center;
+    @include media($tablet){
+        padding-left:20px;
+        text-align:left;
+    }
+}
 .product__btn{
     @extend .g-btn;
     width:100%;

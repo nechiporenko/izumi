@@ -1,0 +1,129 @@
+﻿@import "../../modules/_base.scss";
+/*Single Product Block*/
+.b-product{}
+.b-product__name{
+    margin-bottom:15px;
+    @include px2rem(line-height, 20px);
+    text-align:center;
+
+    @include media($tablet){
+        text-align:left;
+    }
+}
+.b-product__id{
+    @extend .product__id;
+}
+.b-product__title{
+    display:inline;
+    margin:0;
+    @include font-size(14px);
+    font-family:$font-sans-bold;
+    text-transform:uppercase;
+}
+
+.b-product__img-link{
+    @extend .product__link;
+    max-width:460px;
+    margin:0 auto 20px;
+}
+.b-product__thumb{
+    @extend .product__thumb;
+}
+.b-product__img{
+    @extend .g-img-centered;
+}
+
+/*Single Product Count Block*/
+.b-count{
+    padding:20px;
+    margin-bottom:25px;
+    background:#f6f4f3;
+    text-align:center;
+
+    @include media($tablet){
+        text-align:left;
+    }
+}
+.b-count__label{
+    display:block;
+    height:32px;
+    line-height:34px;
+    white-space:nowrap;
+    @include font-size(14px);
+    font-family:$font-sans-bold;
+    text-transform:uppercase;
+    color:$primary;
+
+    @include media($tablet){
+        float:left;
+        margin-right:10px;
+    }
+    @include media($desktop){
+        margin-right:30px;
+    }
+}
+
+/*Single Product Price*/
+.b-product__price{
+    margin-bottom:22px;
+    text-align:center;
+
+    @include media($tablet){
+        padding:0 20px;
+        text-align:left;
+    }
+}
+.b-price{
+    display:inline-block;
+    line-height:1;
+    margin-left:20px;
+    &:first-child{
+        margin-left:0;
+    }
+}
+.b-price__val{
+    display:inline-block;
+    @include font-size(36px);
+    font-family:$font-sans-bold;
+    position:relative;
+}
+.b-price__curr{
+    @include font-size(18px);
+}
+.b-price--old{
+    .b-price__val{
+        &:after{
+            content:'';
+            display:block;
+            height:1px;
+            width:120%;
+            position:absolute;
+            left:-10%; top:50%;
+            background:$text-color;
+            @include transform(rotate(-18deg));
+        }
+    }
+}
+.b-price--new{
+    color:$primary-alt;
+}
+
+.b-product__btn{
+    @extend .product__btn;
+    width:auto;
+    padding:0 30px;
+}
+
+/*Product Description*/
+.b-description{
+    margin-bottom:18px;
+    @include font-size(14px);
+}
+.b-description__title{
+    display:block;
+    margin-bottom:18px;
+    @include font-size(14px);
+    font-family:$font-sans-bold;
+    text-transform:uppercase;
+    color:$primary;
+}
