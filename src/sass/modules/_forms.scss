@@ -45,7 +45,7 @@ textarea {
 }
 
 .g-textarea{
-    @include px2rem(min-height, 72px);
+    @include px2rem(min-height, 108px);
 }
 
 .g-label{
@@ -102,8 +102,9 @@ input[type="radio"] {
 }
 
 
-/*Custom checkboxes*/
-input[type=checkbox].css-checkbox {
+/*Custom checkboxes & radio*/
+input[type=checkbox].css-checkbox,
+input[type=radio].css-radio {
 	position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
 }
 
@@ -121,7 +122,8 @@ label.css-label {
     background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAMAAABhEH5lAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAbUExURf///6SRhvj29bKimcW5suDZ1dPKxamYje3q5+J6LQAAAABISURBVBjTrc/JDQAgCARAQBbsv2JvjPp1X2RIOIifENOVTwTHRWBOk8SkiVWRSamXOmRQa+cqKns8+tV6bISHxMbs9vmhRU8Kk9kA39hLNbkAAAAASUVORK5CYII=) left top no-repeat;
     color:$primary;
 }
-label.css-label {
+label.css-label,
+label.css-radio-label {
     display:inline-block;
     margin-bottom:0;
     -webkit-touch-callout: none;
@@ -131,6 +133,23 @@ label.css-label {
     @include font-size(14px);
     text-transform:uppercase;
 }
+
+
+input[type=radio].css-radio + label.css-radio-label {
+	padding-left:30px;
+	display:inline-block;
+    @include px2rem(line-height, 20px);
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAMAAABhEH5lAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAwUExURQAAAKSRhqSRhqSRhqSRhqSRhqSRhqSRhqSRhv///9rSzf38/PPw7r2vp+DZ1t7X008XqkoAAAAJdFJOUwDQQ/Io+poBopHtZu4AAABqSURBVBjTbZBHDsAwCAQpbuD2/9/GTlNQmBsjkNgF2FDCGDERPATs2mpt2jFchljlRvlcDDzkZfDay6jyQTEDdTF0gqRWaQJsVjWEWK2qEfivnMMyrZrFe8J51QnkxfbKWdF3hbwqzHs6AO/JCPFIofFHAAAAAElFTkSuQmCC) left top no-repeat;
+	vertical-align:middle;
+	cursor:pointer;
+}
+
+input[type=radio].css-radio:checked + label.css-radio-label,
+label.css-radio-label {
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAMAAABhEH5lAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAA8UExURQAAAKSRhqSRhqSRhqSRhqSRhqSRhqSRhqSRhqSRhv///6SRhvLv7amXjcG0rb2vp9jQy9vTz+DZ1t7X0ysu4f4AAAAKdFJOUwCamaIo2wFD8sXe3pW6AAAAgElEQVQY022Q2xLDIAhEMRFBES/J//9rJGk77ZTz4rquDiuAQRuK4EbwJuY+ayl19hwfh3iUF4PvYOSjfDh45VIe5YuRE1A3VZtqq6Y6QZjmqCzUvBkAbW1y0+wUQSytj6WmBfjfci7u5+/z5+4N4YzqFPJqe5+zqlNAYQyUbHcBik0LUTqhP30AAAAASUVORK5CYII=) left top no-repeat;
+    color:$primary;
+}
+
 
 /*Color Checkbox & Radio*/
 .colorbox{

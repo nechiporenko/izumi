@@ -18,3 +18,11 @@
         margin:0 0 0 3px;
     }
 }
+
+.f-social__link{
+    text-decoration:none;
+    &:hover,
+    &:active{
+        color:$primary-alt;
+    }
+}

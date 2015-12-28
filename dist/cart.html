@@ -126,7 +126,7 @@
                                     <span class="b-count__curr">грн</span>
                                 </label>
 
-                                <button type="button" class="b-cart__delete js-cart-del"><i class="icon-cancel"></i></button>
+                                <button type="button" class="b-cart__delete js-cart-del" title="Удалить"><i class="icon-cancel"></i></button>
                             </div>
                         </div>
                     </li>
@@ -155,7 +155,7 @@
                                     <span class="b-count__curr">грн</span>
                                 </label>
 
-                                <button type="button" class="b-cart__delete js-cart-del"><i class="icon-cancel"></i></button>
+                                <button type="button" class="b-cart__delete js-cart-del" title="Удалить"><i class="icon-cancel"></i></button>
                             </div>
                         </div>
                     </li>
@@ -191,7 +191,75 @@
 
             <!--ORDER FORM START-->
             <form class="f-order">
-                
+                <fieldset>
+                    <p>
+                        <input type="radio" class="css-radio" name="delivery" id="radio1" value="60" checked />
+                        <label for="radio1" class="css-radio-label">Вариант доставки №1 - 60 грн</label>
+                    </p>
+                    <p>Praesent efficitur eros mi, ac convallis ligula tincidunt non. Curabitur feugiat non magna condimentum aliquam. Suspendisse fermentum non metus sit amet euismod. Fusce rutrum purus justo, in facilisis metus molestie at. Integer ac nisl sed ante dapibus tempor. Vivamus aliquam nibh hendrerit risus vehicula gravida. Maecenas a nisl lacinia, tristique ante ac, convallis ex.</p>
+                </fieldset>
+                <fieldset>
+                    <p>
+                        <input type="radio" class="css-radio" name="delivery" id="radio2" value="80" />
+                        <label for="radio2" class="css-radio-label">Вариант доставки №2 - 80 грн</label>
+                    </p>
+                    <p>Praesent efficitur eros mi, ac convallis ligula tincidunt non. Curabitur feugiat non magna condimentum aliquam. Suspendisse fermentum non metus sit amet euismod. Fusce rutrum purus justo, in facilisis metus molestie at. Integer ac nisl sed ante dapibus tempor. Vivamus aliquam nibh hendrerit risus vehicula gravida. Maecenas a nisl lacinia, tristique ante ac, convallis ex.</p>
+                </fieldset>
+                <fieldset>
+                    <p>
+                        <input type="radio" class="css-radio" name="delivery" id="radio3" value="100" />
+                        <label for="radio3" class="css-radio-label">Вариант доставки №3 - 100 грн</label>
+                    </p>
+                    <p>Praesent efficitur eros mi, ac convallis ligula tincidunt non. Curabitur feugiat non magna condimentum aliquam. Suspendisse fermentum non metus sit amet euismod. Fusce rutrum purus justo, in facilisis metus molestie at. Integer ac nisl sed ante dapibus tempor. Vivamus aliquam nibh hendrerit risus vehicula gravida. Maecenas a nisl lacinia, tristique ante ac, convallis ex.</p>
+                </fieldset>
+
+                <span class="f-order__title">Детали заказа</span>
+                <div class="g-row">
+                    <div class="g-col g-col--one-half">
+                        <label class="g-visuallyhidden">Имя заказчика</label>
+                        <input type="text" class="g-input" placeholder="имя заказчика" />
+                    </div>
+                    <div class="g-col g-col--one-half">
+                        <label class="g-visuallyhidden">Телефон заказчика</label>
+                        <input type="text" class="g-input" placeholder="телефон заказчика" />
+                    </div>
+                </div>
+                <div class="g-row">
+                    <div class="g-col g-col--one-half">
+                        <label class="g-visuallyhidden">Имя получателя</label>
+                        <input type="text" class="g-input" placeholder="имя получателя" />
+                    </div>
+                    <div class="g-col g-col--one-half">
+                        <label class="g-visuallyhidden">Телефон получателя</label>
+                        <input type="text" class="g-input" placeholder="телефон получателя" />
+                    </div>
+                </div>
+                <div class="g-row">
+                    <div class="g-col g-col--one-half">
+                        <label class="g-visuallyhidden">Адрес доставки получателя</label>
+                        <input type="text" class="g-input" placeholder="адрес доставки получателя" />
+                    </div>
+                    <div class="g-col g-col--one-half">
+                        <label class="g-visuallyhidden">Удобные дата и время доставки</label>
+                        <input type="text" class="g-input" placeholder="удобные дата и время доставки" />
+                    </div>
+                </div>
+                <div class="g-row">
+                    <div class="g-col g-col--one-half">
+                        <label class="g-visuallyhidden">Комментарий к заказу</label>
+                        <textarea class="g-textarea" placeholder="Комментарий к заказу"></textarea>
+                    </div>
+                    <div class="g-col g-col--one-half">
+                        <div class="cart-total">
+                            Сумма заказа
+                            <span class="cart-total__price js-order-total">
+                                <span class="cart-total__priceval">520</span>
+                                <span class="cart-total__curr">грн</span>
+                            </span>
+                        </div>
+                        <button type="submit" class="g-btn g-btn--small g-full-width">Заказать</button>
+                    </div>
+                </div>
             </form>
             <!--/ORDER FORM END-->
         </div><!--/g-container-->
