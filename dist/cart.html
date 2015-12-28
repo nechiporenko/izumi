@@ -111,16 +111,18 @@
                             <a href="product.html" class="cart-product__title">Тюльпан розовый</a>
                             <span class="cart-product__id">48523</span>
 
-                            <div class="b-count">
+                            <div class="b-count b-count--cart">
                                 <label class="b-count__price">
-                                    <span class="b-count__priceval" data-price="30">30.00</span>
+                                    <span class="b-count__name">Цена:</span>
+                                    <span class="b-count__priceval">30</span>
                                     <span class="b-count__curr">грн</span>
                                 </label>
 
                                 <input type="text" class="stepper js-stepper" value="7" />
 
-                                <label class="b-count__price js-cart-subtotal">
-                                    <span class="b-count__priceval">210.00</span>
+                                <label class="b-count__price b-count__price--subtotal js-cart-subtotal">
+                                    <span class="b-count__name">Всего:</span>
+                                    <span class="b-count__priceval">210</span>
                                     <span class="b-count__curr">грн</span>
                                 </label>
 
@@ -138,16 +140,18 @@
                             <a href="product.html" class="cart-product__title">Роза белая</a>
                             <span class="cart-product__id">48523</span>
 
-                            <div class="b-count">
+                            <div class="b-count b-count--cart">
                                 <label class="b-count__price">
-                                    <span class="b-count__priceval" data-price="30">50.00</span>
+                                    <span class="b-count__name">Цена:</span>
+                                    <span class="b-count__priceval">50</span>
                                     <span class="b-count__curr">грн</span>
                                 </label>
 
                                 <input type="text" class="stepper js-stepper" value="5" />
 
                                 <label class="b-count__price b-count__price--subtotal js-cart-subtotal">
-                                    <span class="b-count__priceval">250.00</span>
+                                    <span class="b-count__name">Всего:</span>
+                                    <span class="b-count__priceval">250</span>
                                     <span class="b-count__curr">грн</span>
                                 </label>
 
@@ -156,6 +160,7 @@
                         </div>
                     </li>
                 </ul>
+
                 <div class="cart-total">
                     Итого
                     <span class="cart-total__price js-cart-total">
@@ -167,7 +172,7 @@
             <!--/PRODUCT CART END-->
             
             <!--EMPTY CART SECTION START-->
-            <div class="cart-empty">
+            <div class="cart-empty g-hidden">
                 <span class="g-title">Ваша корзина пуста</span>
                 <p class="g-text-center"><a href="#">Вернитесь</a> на предыдущую страницу, чтобы продолжить покупки</p>
                 <ul class="btn-list">
@@ -183,6 +188,12 @@
                 </ul>
             </div>
             <!--/EMPTY CART SECTION END-->
+
+            <!--ORDER FORM START-->
+            <form class="f-order">
+                
+            </form>
+            <!--/ORDER FORM END-->
         </div><!--/g-container-->
 
     </main>

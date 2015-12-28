@@ -15,6 +15,11 @@
 }
 .b-cart__list{
     @extend .g-clearlist;
+    text-align:center;
+
+    @include media($tablet){
+        text-align:left;
+    }
 }
 .b-cart__item{
     display:block;
@@ -44,3 +49,144 @@
        @include omega();
     }
 }
+
+.cart-product__title{
+    display:block;
+    margin-bottom:10px;
+    font-family:$font-sans-bold;
+    text-decoration:none;
+    text-transform:uppercase;
+    @include font-size(14px);
+    text-align:center;
+    @include media($tablet){
+        text-align:left;
+    }
+}
+.cart-product__id{
+    @extend .product__id;
+    margin-right:0;
+
+    @include media($desktop){
+        margin-bottom:13px;
+    }
+}
+
+
+/*Cart Count Block*/
+.b-count--cart{
+    @extend .g-clearfix;
+    @include media($tablet){
+        padding:14px 20px;
+        margin:0;
+        .b-count__price,
+        .stepper-wrap{
+            float:left;
+        }
+    }
+
+    @include media($desktop){
+        padding:24px 20px;
+    }
+}
+.b-count__name{
+    display:inline-block;
+    @include font-size(14px);
+    line-height:1;
+
+    @include media($tablet){
+        display:none;
+    }
+}
+
+.b-count__price{
+    display:block;
+    margin:9px 0;
+
+    @include media($tablet){
+        min-width:120px;
+        margin:7px 0 0 0;
+    }
+
+    @include media($desktop){
+        min-width:185px;
+    }
+}
+
+.b-count__price--subtotal{
+    @include media($tablet){
+        min-width:unset;
+        margin-left:40px;
+    }
+
+    @include media($desktop){
+        margin-left:100px;
+    }
+}
+
+.b-count__priceval{
+    display:inline-block;
+    font-family:$font-sans-bold;
+    @include font-size(24px);
+    line-height:1;
+}
+.b-count__curr{
+    display:inline-block;
+    @include font-size(14px);
+    line-height:1;
+}
+
+.b-cart__delete{
+    display:inline-block;
+    padding:0;
+    margin:0;
+    width:32px;
+    height:32px;
+    line-height:32px;
+    border:1px solid $border-color;
+    border-radius:50%;
+    text-align:center;
+    box-sizing:border-box;
+    background:#fff;
+    color:$primary;
+
+    [class^="icon-"]:before, [class*=" icon-"]:before{
+        margin:0;
+    }
+
+    &:hover,
+    &:focus{
+        color:$primary-alt;
+        border-color:$primary-alt;
+        outline:0;
+    }
+
+    @include media($tablet){
+        float:right;
+    }
+}
+
+
+.cart-total{
+    margin-bottom:35px;
+    text-align:right;
+    @include font-size(14px);
+    font-family:$font-sans-bold;
+    text-transform:uppercase;
+    color:$primary;
+}
+.cart-total__price{
+
+}
+.cart-total__priceval{
+    @extend .b-count__priceval;
+    @include font-size(36px);
+    color:$text-color;
+    margin-left:10px;
+}
+.cart-total__curr{
+    @extend .b-count__curr;
+    font-family:$font-sans-regular;
+    color:$text-color;
+    text-transform:none;
+}
+
