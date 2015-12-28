@@ -12,6 +12,7 @@
 // Иконка лоадера на время аякс-закрузки контента
 // Лайтбокс
 // Степперы (кол-во товара)
+// Корзина покупок - считаем итоговые суммы
 // Сообщения об отправке формы
 // Если браузер не знает о svg-картинках
 // Если браузер не знает о красивых чекбоксах
@@ -458,6 +459,72 @@ jQuery(document).ready(function ($) {
     if ($('.js-stepper').length) { initStepper(); }
 
     //
+    // Корзина покупок - считаем итоговые суммы
+    //---------------------------------------------------------------------------------------
+    function calcOrderSum() {
+        var $count = $('.js-cart-count'),//кол-во позиций
+            $total = $('.js-cart-total'),
+            $order_total = $('.js-order-total'),
+            $list = $('.js-cart-list'),
+            total=0,
+            method = {};
+
+        method.recalc = function () {//пересчет корзины
+            var price,
+                item_count,
+                subtotal,
+                count = 0;
+
+            total = 0;
+
+            $list.find('li').each(function () {
+                price = +$(this).find('.js-price').text();
+                item_count = +$(this).find('.js-stepper').val();
+                subtotal = price * item_count;
+                count = count + item_count;
+                total = total + subtotal;
+                $(this).find('.js-cart-subtotal').text(subtotal);
+            });
+
+            $count.text(count);
+            $total.text(total);
+
+            method.calcOrder();
+        }
+
+        method.emptyCart = function () {
+            $('.f-order').hide();
+            $('.cart-empty').removeClass('g-hidden');
+        }
+
+        method.calcOrder = function () {//с учетом стоимости доставки
+            var delivery = +$('.js-delivery:checked').val(),
+                order_total;
+            if (total > 0) {
+                order_total = total + delivery;
+            } else {
+                order_total = 0;
+                method.emptyCart();
+            }
+            $order_total.text(order_total);
+        }
+
+        
+
+        method.recalc();//пробежали на старте, получили total
+
+        $list.on('change', '.js-stepper', method.recalc);
+        $list.on('click', '.stepper-btn-wrap a', method.recalc);
+        $('.js-delivery').on('change', method.calcOrder);
+        $list.on('click', '.js-cart-del', function () {
+            $(this).parents('li').remove();
+            method.recalc();
+        });
+    }
+    if ($('.js-cart-count').length){calcOrderSum()}
+
+
+    //
     // Сообщения об отправке формы
     //---------------------------------------------------------------------------------------
     // после аякс-отправки формы ($form), если все ок - $form.find('.g-notice--ok').fadeIn();
@@ -486,6 +553,7 @@ jQuery(document).ready(function ($) {
     //---------------------------------------------------------------------------------------
     if ($html.hasClass('lt-ie9')) {
         $('input[type="checkbox"]').removeClass('css-checkbox');
+        $('input[type="radio"]').removeClass('css-radio');
         $('.product-grid__item:nth-child(3n)').addClass('last');
     }
 });

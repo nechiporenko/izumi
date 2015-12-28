@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Izumi - Cart Page</title>
+    <title>Izumi - Empty Cart Page</title>
     <meta name="description" content="Page Description">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -24,7 +24,7 @@
                 <div class="b-header__controls">
                     <button type="button" class="b-header__btn js-search-toggle"><i class="icon-search"></i></button>
                     <button type="button" class="b-header__btn js-userinfo-toggle"><i class="icon-user"></i></button>
-                    <a href="cart.html" class="b-header__btn active"><i class="icon-basket"></i></a>
+                    <a href="cart.html" class="b-header__btn"><i class="icon-basket"></i></a>
                     <button type="button" class="b-header__btn m-menu-toggle js-mm-toggle"><i class="icon-menu"></i></button>
                 </div>
             </div><!--/g-container-->
@@ -98,73 +98,13 @@
             <!--PRODUCT CART START-->
             <div class="b-cart">
                 <div class="b-cart__title">
-                    В корзине <span class="b-cart__count js-cart-count">12</span> товаров
+                    В корзине <span class="b-cart__count js-cart-count">0</span> товаров
                 </div>
-                <ul class="b-cart__list js-cart-list">
-                    <li class="b-cart__item">
-                        <a href="product.html" class="b-cart__link">
-                            <figure class="b-cart__thumb">
-                                <img src="img/products/product01.jpg" class="b-cart__img" alt="Product Picture" />
-                            </figure>
-                        </a>
-                        <div class="cart-product">
-                            <a href="product.html" class="cart-product__title">Тюльпан розовый</a>
-                            <span class="cart-product__id">48523</span>
-
-                            <div class="b-count b-count--cart">
-                                <label class="b-count__price">
-                                    <span class="b-count__name">Цена:</span>
-                                    <span class="b-count__priceval js-price">30</span>
-                                    <span class="b-count__curr">грн</span>
-                                </label>
-
-                                <input type="text" class="stepper js-stepper" value="7" />
-
-                                <label class="b-count__price b-count__price--subtotal">
-                                    <span class="b-count__name">Всего:</span>
-                                    <span class="b-count__priceval js-cart-subtotal">210</span>
-                                    <span class="b-count__curr">грн</span>
-                                </label>
-
-                                <button type="button" class="b-cart__delete js-cart-del" title="Удалить"><i class="icon-cancel"></i></button>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="b-cart__item">
-                        <a href="product.html" class="b-cart__link">
-                            <figure class="b-cart__thumb">
-                                <img src="img/products/product02.jpg" class="b-cart__img" alt="Product Picture" />
-                            </figure>
-                        </a>
-                        <div class="cart-product">
-                            <a href="product.html" class="cart-product__title">Роза белая</a>
-                            <span class="cart-product__id">48523</span>
-
-                            <div class="b-count b-count--cart">
-                                <label class="b-count__price">
-                                    <span class="b-count__name">Цена:</span>
-                                    <span class="b-count__priceval js-price">50</span>
-                                    <span class="b-count__curr">грн</span>
-                                </label>
-
-                                <input type="text" class="stepper js-stepper" value="5" />
-
-                                <label class="b-count__price b-count__price--subtotal">
-                                    <span class="b-count__name">Всего:</span>
-                                    <span class="b-count__priceval js-cart-subtotal">250</span>
-                                    <span class="b-count__curr">грн</span>
-                                </label>
-
-                                <button type="button" class="b-cart__delete js-cart-del" title="Удалить"><i class="icon-cancel"></i></button>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
 
                 <div class="cart-total">
                     Итого
                     <span class="cart-total__price">
-                        <span class="cart-total__priceval js-cart-total">460</span>
+                        <span class="cart-total__priceval js-cart-total">0</span>
                         <span class="cart-total__curr">грн</span>
                     </span>
                 </div>
@@ -172,7 +112,7 @@
             <!--/PRODUCT CART END-->
             
             <!--EMPTY CART SECTION START-->
-            <div class="cart-empty g-hidden">
+            <div class="cart-empty">
                 <span class="g-title">Ваша корзина пуста</span>
                 <p class="g-text-center"><a href="#">Вернитесь</a> на предыдущую страницу, чтобы продолжить покупки</p>
                 <ul class="btn-list">
@@ -188,92 +128,6 @@
                 </ul>
             </div>
             <!--/EMPTY CART SECTION END-->
-
-            <!--ORDER FORM START-->
-            <form class="f-order">
-                <fieldset>
-                    <p>
-                        <input type="radio" class="css-radio js-delivery" name="delivery" id="radio1" value="60" checked />
-                        <label for="radio1" class="css-radio-label">Вариант доставки №1 - 60 грн</label>
-                    </p>
-                    <p>Praesent efficitur eros mi, ac convallis ligula tincidunt non. Curabitur feugiat non magna condimentum aliquam. Suspendisse fermentum non metus sit amet euismod. Fusce rutrum purus justo, in facilisis metus molestie at. Integer ac nisl sed ante dapibus tempor. Vivamus aliquam nibh hendrerit risus vehicula gravida. Maecenas a nisl lacinia, tristique ante ac, convallis ex.</p>
-                </fieldset>
-                <fieldset>
-                    <p>
-                        <input type="radio" class="css-radio js-delivery" name="delivery" id="radio2" value="80" />
-                        <label for="radio2" class="css-radio-label">Вариант доставки №2 - 80 грн</label>
-                    </p>
-                    <p>Praesent efficitur eros mi, ac convallis ligula tincidunt non. Curabitur feugiat non magna condimentum aliquam. Suspendisse fermentum non metus sit amet euismod. Fusce rutrum purus justo, in facilisis metus molestie at. Integer ac nisl sed ante dapibus tempor. Vivamus aliquam nibh hendrerit risus vehicula gravida. Maecenas a nisl lacinia, tristique ante ac, convallis ex.</p>
-                </fieldset>
-                <fieldset>
-                    <p>
-                        <input type="radio" class="css-radio js-delivery" name="delivery" id="radio3" value="100" />
-                        <label for="radio3" class="css-radio-label">Вариант доставки №3 - 100 грн</label>
-                    </p>
-                    <p>Praesent efficitur eros mi, ac convallis ligula tincidunt non. Curabitur feugiat non magna condimentum aliquam. Suspendisse fermentum non metus sit amet euismod. Fusce rutrum purus justo, in facilisis metus molestie at. Integer ac nisl sed ante dapibus tempor. Vivamus aliquam nibh hendrerit risus vehicula gravida. Maecenas a nisl lacinia, tristique ante ac, convallis ex.</p>
-                </fieldset>
-
-                <span class="f-order__title">Детали заказа</span>
-                <div class="g-row">
-                    <div class="g-col g-col--one-half">
-                        <label class="g-visuallyhidden">Имя заказчика</label>
-                        <input type="text" class="g-input" placeholder="имя заказчика" />
-                    </div>
-                    <div class="g-col g-col--one-half">
-                        <label class="g-visuallyhidden">Телефон заказчика</label>
-                        <input type="text" class="g-input" placeholder="телефон заказчика" />
-                    </div>
-                </div>
-                <div class="g-row">
-                    <div class="g-col g-col--one-half">
-                        <label class="g-visuallyhidden">Имя получателя</label>
-                        <input type="text" class="g-input" placeholder="имя получателя" />
-                    </div>
-                    <div class="g-col g-col--one-half">
-                        <label class="g-visuallyhidden">Телефон получателя</label>
-                        <input type="text" class="g-input" placeholder="телефон получателя" />
-                    </div>
-                </div>
-                <div class="g-row">
-                    <div class="g-col g-col--one-half">
-                        <label class="g-visuallyhidden">Адрес доставки получателя</label>
-                        <input type="text" class="g-input" placeholder="адрес доставки получателя" />
-                    </div>
-                    <div class="g-col g-col--one-half">
-                        <label class="g-visuallyhidden">Удобные дата и время доставки</label>
-                        <input type="text" class="g-input" placeholder="удобные дата и время доставки" />
-                    </div>
-                </div>
-                <div class="g-row">
-                    <div class="g-col g-col--one-half">
-                        <label class="g-visuallyhidden">Комментарий к заказу</label>
-                        <textarea class="g-textarea" placeholder="Комментарий к заказу"></textarea>
-                    </div>
-                    <div class="g-col g-col--one-half">
-                        <div class="cart-total">
-                            Сумма заказа
-                            <span class="cart-total__price">
-                                <span class="cart-total__priceval js-order-total">520</span>
-                                <span class="cart-total__curr">грн</span>
-                            </span>
-                        </div>
-                        <button type="submit" class="g-btn g-btn--small g-full-width">Заказать</button>
-                    </div>
-                </div>
-                <div class="g-row">
-                    <div class="g-col g-col--one-third-center">
-                        <div class="g-notice g-notice--ok js-notice">
-                            <span class="g-title">Спасибо за заказ!</span>
-                            <p>В ближайшее время мы перезвоним Вам для уточнения деталей</p>
-                        </div>
-                        <div class="g-notice g-notice--bad js-notice">
-                            <span class="g-title">Произошла ошибка</span>
-                            <p>Попробуйте повторить немного позже</p>
-                        </div>
-                    </div>
-                </div>
-            </form>
-            <!--/ORDER FORM END-->
         </div><!--/g-container-->
 
     </main>
