@@ -17,3 +17,7 @@
         @include px2rem(padding, 36px 0);
     }
 }
+.page__content{
+    padding-bottom:15px;
+    @include font-size(14px);
+}

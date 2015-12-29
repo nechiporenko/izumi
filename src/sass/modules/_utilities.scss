@@ -8,12 +8,12 @@
 img.g-full-width{clear:both;display:block;width:100%;height:auto;margin:0 0 0 0;}
 img.g-img-left{
     float:left;
-    @include px2rem(margin, 0 20px 9px 0);
+    @include px2rem(margin, 0 22px 9px 0);
     @extend .g-max-full-width;
 }
 img.g-img-right{
     float:right;
-    @include px2rem(margin, 0 0 20px 9px);
+    @include px2rem(margin, 0 0 22px 9px);
     @extend .g-max-full-width;
 }
 
