@@ -1,0 +1,63 @@
+﻿@import "../../modules/_base.scss";
+/*News List*/
+.news-list{
+    padding:0;
+    margin:0 -10px;
+    list-style-type:none; 
+    @extend .g-clearfix;
+}
+.news-list__item{
+    float:left;
+    width:100%;
+    padding:0 10px;
+    box-sizing:border-box;
+
+    @include media($small){
+        width:50%;
+    }
+
+    @include media($tablet){
+        width:(100%)/3;
+    }
+}
+
+.lt-ie9{//костыль для ie8
+    .news-list__item{
+        width:(99%)/3;
+    }
+}
+
+.news-list__content{
+    margin-bottom:36px;
+    @include font-size(14px);
+}
+.news-list__title{
+    display:block;
+    margin:0;
+    font-family:$font-sans-bold;
+    text-decoration:none;
+    text-transform:uppercase;
+    @include font-size(14px);
+    color:$primary;
+}
+.news-list__link{
+    text-decoration:none;
+    &:hover,
+    &:active{
+        color:$primary-alt;
+    }
+}
+.news-list__date{
+    display:block;
+    margin-bottom:18px;
+}
+
+.new-list__img{
+    @extend .g-max-full-width;
+    @include transition(opacity .3s ease);
+    @include backface-visibility(hidden);
+
+    &:hover{
+        opacity:.8;
+    }
+}
