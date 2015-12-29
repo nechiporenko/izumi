@@ -1,0 +1,41 @@
+﻿@import "../../modules/_base.scss";
+/*Contacts Page*/
+.b-contacts{
+    margin-bottom:18px;
+    @extend .g-clearfix;
+}
+.b-contacts__col{
+    @extend .g-col;
+    @extend .g-col--one-half;
+}
+.b-contacts__title{
+    @extend .g-subtitle;
+    margin-bottom:18px;
+}
+.b-contacts__set{
+    margin-bottom:55px;
+    @include font-size(14px);
+    color:$primary;
+
+    a{
+        text-decoration:none;
+        &:hover,
+        &:active{
+            text-decoration:underline;
+        }
+    }
+}
+
+/*Google Map*/
+.map{
+    height:280px;
+    background:#f6f4f3;
+
+    @include media($tablet){
+        height:450px;
+    }
+}
+.map__noscrollbar {
+    overflow: hidden;
+    white-space: nowrap;
+}
