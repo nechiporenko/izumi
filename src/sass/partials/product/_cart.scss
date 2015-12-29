@@ -54,6 +54,7 @@
     display:block;
     margin-bottom:10px;
     font-family:$font-sans-bold;
+    font-weight:700;
     text-decoration:none;
     text-transform:uppercase;
     @include font-size(14px);
@@ -126,6 +127,7 @@
 .b-count__priceval{
     display:inline-block;
     font-family:$font-sans-bold;
+    font-weight:700;
     @include font-size(24px);
     line-height:1;
 }
@@ -171,6 +173,7 @@
     text-align:right;
     @include font-size(14px);
     font-family:$font-sans-bold;
+    font-weight:700;
     text-transform:uppercase;
     color:$primary;
 }

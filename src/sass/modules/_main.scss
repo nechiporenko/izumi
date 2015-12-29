@@ -71,7 +71,19 @@ h1, h2, h3, h4, h5, h6 {
     @include font-size(24px);
 }
 
+.g-subtitle{
+    display:block;
+    margin:0;
+    font-family:$font-sans-bold;
+    font-weight:700;
+    color:$primary;
+    @include font-size(14px);
+    text-transform:uppercase;
+}
 
+.g-subtitle--bright{
+    color:$primary-alt;
+}
 
 .g-brand-color{
     color:$primary;
