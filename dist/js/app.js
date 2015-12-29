@@ -297,7 +297,9 @@ jQuery(document).ready(function ($) {
     function initQuoteSlider() {
         var $slider = $('.js-quote-slider').bxSlider({
             auto: false,
-            pager:false,
+            pager: false,
+            infiniteLoop: false,
+            hideControlOnEnd: true
         });
     }
     if ($('.js-quote-slider').length) { initQuoteSlider();}
