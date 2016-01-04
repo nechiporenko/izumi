@@ -111,12 +111,12 @@ $loader:   '../img/loader.gif';
         background-repeat:no-repeat;
         background-size:100% 100%;
 		z-index: 200;
-        opacity:.8;
+        opacity:.4;
         @include transition(opacity .3s ease);
-        display:none;
+        display:block;
 
         @include media($tablet){
-            display:block;
+            opacity:.8;
         }
 
         &:hover,
