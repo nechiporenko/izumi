@@ -20,8 +20,7 @@
 }
 
 .b-filter__list{
-    list-style-type:none;
-    padding:0;
+    @extend .g-clearlist;
 }
 .b-filter__item{
     display:block;
@@ -29,7 +28,6 @@
 }
 
 .b-filter--color{
-    margin-top:-9px;
     font-size:0;
 
     .b-filter__item{
@@ -40,7 +38,6 @@
 }
 .priceslider__input{
     @extend .g-input;
-    margin-top:-9px;
     margin-bottom:34px;
     font-family:$font-sans-bold;
     text-align:center;

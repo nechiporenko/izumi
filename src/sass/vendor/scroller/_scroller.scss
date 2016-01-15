@@ -1,0 +1,23 @@
+﻿@import "../../modules/_base.scss";
+/*Scrolled Block*/
+.b-scroller{
+    margin-bottom:18px;
+    padding-right:15px;
+     height: 220px;
+     overflow: hidden;
+}
+
+.miniscroll-thumb{
+    border-radius:5px;
+    cursor:pointer;
+    background:$title-color !important;
+
+    &:hover,
+    &:active{
+        background:$primary-alt !important;
+    }
+}
+.miniscroll-tracker{
+    background:#fff !important;
+    border-radius:5px;
+}

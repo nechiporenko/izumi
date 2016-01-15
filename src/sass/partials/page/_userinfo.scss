@@ -37,6 +37,19 @@
 .btn-list__link{
     @extend .g-btn;
     width:100%;
+    background:#fff;
+    color:$primary;
+    border-color:$primary;
+
+    &:before{
+        background:$primary-alt;
+    }
+
+    &:hover,
+    &:active{
+        color:#fff;
+        border-color:$primary-alt;
+    }
 
     @include media($tablet){
         width:auto;

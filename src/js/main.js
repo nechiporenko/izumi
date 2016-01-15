@@ -14,6 +14,7 @@
 // Степперы (кол-во товара)
 // Корзина покупок - считаем итоговые суммы
 // Страница Новости - ломаная сетка
+// Скроллер
 // Если браузер не знает о svg-картинках
 // Если браузер не знает о красивых чекбоксах
 
@@ -537,7 +538,29 @@ jQuery(document).ready(function ($) {
             });
         });
     }
-    if($('.js-masonry').length){initMasonry()}
+    if ($('.js-masonry').length) { initMasonry() }
+
+
+    //
+    // Скроллер
+    //---------------------------------------------------------------------------------------
+    function initScroller() {
+        new Miniscroll('.js-scroller', {
+            axis: 'y',
+            size: 10,
+            sizethumb: 36,
+            onScroll: function (percent, offset) { }
+        });
+        
+        new Miniscroll('.js-scroll', {
+            axis: 'y',
+            size: 10,
+            sizethumb: 36,
+            onScroll: function (percent, offset) { }
+        });
+        
+    }
+    if($('.js-scroller, .js-scroll').length){initScroller()}
 
     //
     // Если браузер не знает о svg-картинках

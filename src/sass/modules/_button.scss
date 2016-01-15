@@ -4,7 +4,7 @@
     display: inline-block;
     @include px2rem(height, 54px);
     @include px2rem(padding, 0 10px);
-    color:$primary;
+    color:#fff;
     text-align: center;
     @include font-size(16px);
     @include px2rem(line-height, 52px);
@@ -13,9 +13,9 @@
     @include px2rem(letter-spacing, -.6px);
     text-decoration: none;
     white-space: nowrap;
-    background-color: #fff;
+    background:$primary-alt;
     border-radius:$border-radius;
-    border: 1px solid $primary;
+    border: 1px solid $primary-alt;
     cursor: pointer;
     box-sizing: border-box;
 
@@ -35,7 +35,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: $primary-alt;
+        background:#fff;
         @include transform(scale(0));
         @include transition-property(transform);
         @include transition-duration(.3s);
@@ -47,8 +47,8 @@
     &:hover,
     &:focus,
     &:active{
-        color:#fff;
-        border-color:$primary-alt;
+        color:$primary;
+        border-color:$primary;
         outline:0;
 
         &:before{

@@ -106,11 +106,22 @@
 
 .slider__btn{
     @extend .g-btn;
+    background:#fff;
+    color:$primary;
     @include px2rem(height, 38px);
     @include px2rem(line-height, 36px);
     margin:0;
     border-color:#757575;
-    color:#757575;
+
+    &:before{
+        background:$primary-alt;
+    }
+
+    &:hover,
+    &:active{
+        color:#fff;
+        border-color:$primary-alt;
+    }
 
     @include media($tablet){
          @include px2rem(height, 54px);

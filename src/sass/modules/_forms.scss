@@ -163,11 +163,10 @@ label.css-radio-label {
     color:#fff;
     outline:none;
     cursor:pointer;
-    border:1px solid transparent;
+    border:1px solid $primary;
     box-sizing:border-box;
 
     &.active{
-        border-color:$primary;
         .colorbox__icon{
             display:inline;
         }

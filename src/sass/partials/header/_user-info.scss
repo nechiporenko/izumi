@@ -25,4 +25,17 @@
     @extend .g-btn;
     display:block;
     @include px2rem(letter-spacing, -.2px);
+    background:#fff;
+    color:$primary;
+    border-color:$primary;
+
+     &:before{
+        background:$primary-alt;
+    }
+
+    &:hover,
+    &:active{
+        color:#fff;
+        border-color:$primary-alt;
+    }
 }
