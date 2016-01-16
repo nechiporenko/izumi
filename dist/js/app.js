@@ -83,6 +83,7 @@ jQuery.extend(verge);
 // Корзина покупок - считаем итоговые суммы
 // Страница Новости - ломаная сетка
 // Скроллер
+// Показать / скрыть фильтры в каталоге
 // Если браузер не знает о svg-картинках
 // Если браузер не знает о красивых чекбоксах
 
@@ -662,10 +663,6 @@ jQuery(document).ready(function ($) {
 
         method.checkSize();//если сразу открыли на десктопе - добавим фильтру и кнопке активные классы (т.к. на мобильных фильтр скрыт по умолчанию)
 
-        //if (winW >= BREAKPOINT) {
-        //    method.showFilter();
-        //}
-
         $filter.on('click', '.js-filter-toggle', function () {//переключение по клику на кнопку
             if ($(this).hasClass('active')) {
                 method.hideFilter();
@@ -674,7 +671,7 @@ jQuery(document).ready(function ($) {
             }
         });
 
-        $window.on('resize', function () {
+        $window.on('resize', function () {//ресайз
             setTimeout(method.checkSize, 500);
         });
     }
