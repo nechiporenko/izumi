@@ -17,7 +17,7 @@
 
 .b-filter__toggle{
     display:inline-block;
-    margin:10px 0;
+    margin:20px 0 0;
     padding:0;
     border:none;
     background:none;
@@ -43,6 +43,10 @@
         &:after{
             content:'\e808';
         }
+    }
+
+    @include media($desktop){
+        margin:10px 0;
     }
 }
 

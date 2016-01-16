@@ -671,9 +671,9 @@ jQuery(document).ready(function ($) {
             }
         });
 
-        $window.on('resize', function () {//ресайз
-            setTimeout(method.checkSize, 500);
-        });
+        //$window.on('resize', function () {//ресайз
+        //    setTimeout(method.checkSize, 500);
+        //});
     }
     if($('.js-filter').length){initFilter()}
 

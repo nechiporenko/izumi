@@ -3,8 +3,12 @@
 .b-scroller{
     margin-bottom:18px;
     padding-right:15px;
-    max-height: 220px;
+    max-height: 140px;
     overflow: hidden;
+
+    @include media($small){
+        max-height: 220px;
+    }
 }
 
 .miniscroll-thumb{

@@ -10,6 +10,17 @@
         }
     }
 }
+
+@include media($desktop){
+    .slider{
+        .bx-wrapper{
+            .bx-controls-direction a{
+                margin-top:36px;
+            }
+        }
+    }
+}
+
 .slider__list{
     @extend .g-clearlist;
 }
