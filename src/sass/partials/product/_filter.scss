@@ -4,6 +4,48 @@
     padding:36px 0;
     background:#f6f4f3;
 }
+
+.b-filter__inner{
+    @extend .g-row;
+
+    display:none;
+
+    @include media($desktop){
+        display:block;
+    }
+}
+
+.b-filter__toggle{
+    display:block;
+    margin:10px 0;
+    padding:0;
+    border:none;
+    background:none;
+    @include font-size(14px);
+    font-family:$font-sans-bold;
+    color:$primary;
+    outline:0;
+    text-transform:uppercase;
+    white-space:nowrap;
+
+    &:hover,
+    &:active{
+        color:$primary-alt;
+    }
+
+    &:after{
+        content:'\e809';
+        font-family:'fontello';
+        margin-left:10px;
+    }
+
+    &.active{
+        &:after{
+            content:'\e808';
+        }
+    }
+}
+
 .b-filter__title{
     display:block;
     margin-bottom:18px;

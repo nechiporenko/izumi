@@ -560,7 +560,57 @@ jQuery(document).ready(function ($) {
         });
         
     }
-    if($('.js-scroller, .js-scroll').length){initScroller()}
+    if ($('.js-scroller, .js-scroll').length) { initScroller() }
+
+    //
+    // Показать / скрыть фильтры в каталоге
+    //---------------------------------------------------------------------------------------
+    function initFilter() {
+        var $filter = $('.js-filter'),
+            $target = $filter.find('.b-filter__inner'),
+            $btn = $filter.find('.js-filter-toggle'),
+            BREAKPOINT = 992,
+            winW,
+            method = {};
+
+        method.showFilter = function () {
+            $btn.addClass('active');
+            $target.addClass('active').show();
+        }
+
+        method.hideFilter = function () {
+            $btn.removeClass('active');
+            $target.removeClass('active').hide();
+        }
+
+        method.checkSize = function () {
+            winW = verge.viewportW();
+            if (winW >= BREAKPOINT) {
+                method.showFilter();
+            } else {
+                method.hideFilter();
+            }
+        }
+
+        method.checkSize();//если сразу открыли на десктопе - добавим фильтру и кнопке активные классы (т.к. на мобильных фильтр скрыт по умолчанию)
+
+        //if (winW >= BREAKPOINT) {
+        //    method.showFilter();
+        //}
+
+        $filter.on('click', '.js-filter-toggle', function () {//переключение по клику на кнопку
+            if ($(this).hasClass('active')) {
+                method.hideFilter();
+            } else {
+                method.showFilter();
+            }
+        });
+
+        $window.on('resize', function () {
+            setTimeout(method.checkSize, 500);
+        });
+    }
+    if($('.js-filter').length){initFilter()}
 
     //
     // Если браузер не знает о svg-картинках

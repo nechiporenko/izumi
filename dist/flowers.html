@@ -93,9 +93,10 @@
     <!--/HEADER END-->
     
     <!--FILTER SECTION START-->
-    <div class="b-filter">
+    <div class="b-filter js-filter">
         <div class="g-container">
-            <div class="g-row">
+            <button type="button" class="b-filter__toggle js-filter-toggle"><i class="icon-filter"></i>Фильтры</button>
+            <div class="b-filter__inner">
                 <div class="g-col g-col--one-third">
                     <span class="b-filter__title">Цветы</span>
                     <div class="b-scroller js-scroller">
@@ -221,7 +222,7 @@
                     </div>
                     <div id="priceslider" class="priceslider js-priceslider"></div>
                     <!--/PRICESLIDER END-->
-                    
+
                     <button type="button" class="b-filter__btn" data-loader><i class="icon-ok"></i>Применить фильтр</button>
                     <button type="button" class="b-filter__btn"><i class="icon-cancel"></i>Очистить фильтр</button>
                 </div><!--/g-col-->
