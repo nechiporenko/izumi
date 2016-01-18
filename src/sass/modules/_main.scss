@@ -55,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
   @include px2rem(margin-bottom, $project-line-height);
   line-height:strip-units($project-line-height/20);
   color:$title-color;
-  font-weight:700;
+  font-weight:normal;
 }
 .g-title{
     display:block;
@@ -67,7 +67,6 @@ h1, h2, h3, h4, h5, h6 {
     text-transform:uppercase;
     text-align:center;
     font-family:$font-serif;
-    font-style:italic;
     @include font-size(24px);
 }
 
@@ -75,8 +74,7 @@ h1, h2, h3, h4, h5, h6 {
     display:block;
     margin:0;
     font-family:$font-sans-bold;
-    font-weight:700;
-    color:$primary-alt;
+    font-weight:normal;
     @include font-size(14px);
     text-transform:uppercase;
 }
@@ -88,11 +86,12 @@ h1, h2, h3, h4, h5, h6 {
 
 i, em{
     font-family: $font-serif;
+    font-style:normal;
 }
 
 b, strong{
     font-family:$font-sans-bold;
-    font-weight:700;
+    font-weight:normal;
 }
 
 
@@ -126,7 +125,7 @@ ol ul {
 blockquote{
     line-height:1.5;
     font-family:$font-serif;
-    font-style: italic;
+    font-style: normal;
 }
 cite{
     display:block;}

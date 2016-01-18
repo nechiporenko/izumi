@@ -18,7 +18,6 @@
     border-radius:16px;
     @include font-size(16px);
     font-family:$font-serif;
-    font-style:italic;
     color:$text-color;
     text-align:center;
     background:#fff;
@@ -70,29 +69,3 @@
 .stepper-btn-up{
     right:0;
 }
-
-/*.stepper-btn-wrap{
-    .button{
-        padding:0;
-        margin:0;
-        width:36px;
-        @include font-size(20px);
-        position:absolute;
-        top:0;
-        z-index:5;
-    }
-    .stepper-btn-up{
-        right:0;
-        border-top-left-radius:0;
-        border-bottom-left-radius:0;
-    }
-    .stepper-btn-dwn{
-        left:0;
-        border-top-right-radius:0;
-        border-bottom-right-radius:0;
-    }
-    [class^="icon-"]:before, [class*=" icon-"]:before{
-        margin:0;
-    }
-}*/
-

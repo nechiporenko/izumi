@@ -51,7 +51,6 @@ textarea {
 .g-label{
     display: block;
     @include px2rem(margin-bottom, $project-line-height/4);
-    font-weight: bold;
 }
 .g-label__body{
     display: inline-block;

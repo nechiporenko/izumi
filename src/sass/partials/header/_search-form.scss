@@ -56,7 +56,6 @@
     @include font-size(18px);
     color:$primary;
     font-family:$font-serif-bold;
-    font-style:italic;
 
     @include media($tablet){
         @include font-size(24px);
