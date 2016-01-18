@@ -723,9 +723,6 @@ jQuery(document).ready(function ($) {
 
         method.checkWinSize();
 
-        $('.js-lang').on('click', '.b-link__current', function (e) {//запретим клик по текущему линку языка
-            e.preventDefault();
-        });
 
         $btn.on({
             mouseenter: function () {

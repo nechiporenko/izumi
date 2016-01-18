@@ -17,12 +17,18 @@
     white-space:nowrap;
     text-decoration:none;
     text-transform:uppercase;
+    color:$primary;
     font-family:$font-sans-bold;
 
     &:hover,
     &:active{
         color:$primary-alt;
     }
+}
+
+.b-lang__link--current{
+    cursor:pointer;
+    @include transition(color .15s ease-in);
 }
 
 .b-lang__list{
