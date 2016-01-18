@@ -84,6 +84,7 @@ jQuery.extend(verge);
 // Страница Новости - ломаная сетка
 // Скроллер
 // Показать / скрыть фильтры в каталоге
+// Переключатель языка в хидере
 // Если браузер не знает о svg-картинках
 // Если браузер не знает о красивых чекбоксах
 
@@ -670,12 +671,91 @@ jQuery(document).ready(function ($) {
                 method.showFilter();
             }
         });
-
-        //$window.on('resize', function () {//ресайз
-        //    setTimeout(method.checkSize, 500);
-        //});
     }
-    if($('.js-filter').length){initFilter()}
+    if ($('.js-filter').length) { initFilter() }
+
+    //
+    // Переключатель языка в хидере
+    //---------------------------------------------------------------------------------------
+    var langSwitcherInit = (function () {
+        var $switcher=$('.js-lang'),
+            $btn = $switcher.find('.b-lang__link--current').parent('li'),
+            $list=$switcher.find('.b-lang__list'),
+            BREAKPOINT = 992,
+            winW,
+            method = {};
+
+        method.hoverSwitcherOn = function () {
+            $list.stop(true, true).fadeIn('fast');
+        }
+
+        method.hoverSwitcherOff = function () {
+            $list.stop(true, true).fadeOut('slow');
+        }
+
+
+        method.showSwitcher = function () {
+            $btn.addClass('active');
+            $list.slideDown();
+            $switcher.on({
+                mouseleave: function () {
+                    $body.bind('click', method.hideSwitcher);
+                },
+                mouseenter: function () {
+                    $body.unbind('click', method.hideSwitcher);
+                }
+            });
+        }
+
+        method.hideSwitcher = function () {
+            $btn.removeClass('active');
+            $list.hide();
+            $body.unbind('click', method.hideSwitcher);
+        }
+
+        method.checkWinSize = function () {
+            winW = verge.viewportW();
+            if (winW >= BREAKPOINT) {
+                $btn.removeClass('active');
+                $list.hide();
+            }
+        }
+
+        method.checkWinSize();
+
+        $('.js-lang').on('click', '.b-link__current', function (e) {//запретим клик по текущему линку языка
+            e.preventDefault();
+        });
+
+        $btn.on({
+            mouseenter: function () {
+                if (winW >= BREAKPOINT) {
+                    method.hoverSwitcherOn();
+                }
+            },
+            mouseleave: function () {
+                if (winW >= BREAKPOINT) {
+                    method.hoverSwitcherOff();
+                }
+            }
+        });
+
+        $btn.on('click', function () {
+            if (winW < BREAKPOINT) {
+                if ($btn.hasClass('active')) {
+                    method.hideSwitcher();
+                } else {
+                    method.showSwitcher();
+                }
+            }
+        });
+
+        $window.on('resize', function () {
+            setTimeout(method.checkWinSize, 500);
+        });
+
+    })();
+
 
     //
     // Если браузер не знает о svg-картинках

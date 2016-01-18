@@ -17,3 +17,5 @@
 .icon-plus:before { content: '\e80f'; } /* '' */
 .icon-minus:before { content: '\e810'; } /* '' */
 .icon-filter:before { content: '\e811'; } /* '' */
+.icon-language:before { content: '\e812'; } /* '' */
+.icon-down-dir:before { content: '\e813'; } /* '' */

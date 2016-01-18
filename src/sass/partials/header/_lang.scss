@@ -1,0 +1,52 @@
+﻿@import "../../modules/_base.scss";
+/*Lang switcher*/
+.b-lang{
+    @extend .g-clearlist;
+    float:left;
+    line-height:1;
+}
+.b-lang__item{
+    @include font-size(12px);
+    position:relative;
+}
+.b-lang__link{
+    display:inline-block;
+    @include px2rem(height, 36px);
+    @include px2rem(line-height, 36px);
+    padding-left:15px;
+    white-space:nowrap;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-family:$font-sans-bold;
+
+    &:hover,
+    &:active{
+        color:$primary-alt;
+    }
+}
+
+.b-lang__list{
+    @extend .g-clearlist;
+    position:absolute;
+    top:100%;
+    left:0;
+    z-index:1000;
+    background:#fff;
+    display:none;
+
+    .b-lang__link{
+        @include px2rem(height, 30px);
+        @include px2rem(line-height, 30px);
+        padding-right:15px;
+    }
+}
+
+.no-js{
+    .b-lang__item{
+        &:hover{
+           .b-lang__list{
+               display:block;
+           }
+        }
+    }
+}
